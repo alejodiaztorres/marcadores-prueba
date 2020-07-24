@@ -1,0 +1,1802 @@
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (14.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (9.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateBookmarks (20200724001744)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "bookmarks" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20200724001744_create_bookmarks.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200724001744"]]
+  ↳ bin/rails:9
+  [1m[35m (9.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-07-24 00:18:06.479790"], ["updated_at", "2020-07-24 00:18:06.479790"]]
+  ↳ bin/rails:9
+  [1m[35m (30.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateBookmarks (20200724001744)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE "bookmarks"[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20200724001744"]]
+  ↳ bin/rails:9
+  [1m[35m (10.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateCategories (20200724002525)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20200724002525_create_categories.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "categories" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "visibility" varchar, "category_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_09a423a16c"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+)[0m
+  ↳ db/migrate/20200724002525_create_categories.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_categories_on_category_id" ON "categories" ("category_id")[0m
+  ↳ db/migrate/20200724002525_create_categories.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200724002525"]]
+  ↳ bin/rails:9
+  [1m[35m (6.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateCategories (20200724002525)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "categories"[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20200724002525"]]
+  ↳ bin/rails:9
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateCategories (20200724002525)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20200724002525_create_categories.rb:3
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "categories" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "visibility" boolean, "category_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_09a423a16c"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+)[0m
+  ↳ db/migrate/20200724002525_create_categories.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_categories_on_category_id" ON "categories" ("category_id")[0m
+  ↳ db/migrate/20200724002525_create_categories.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200724002525"]]
+  ↳ bin/rails:9
+  [1m[35m (8.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateBookmarks (20200724003051)
+  [1m[35m (1.9ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20200724003051_create_bookmarks.rb:3
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "bookmarks" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "url" varchar, "category_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_e91b169454"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+)[0m
+  ↳ db/migrate/20200724003051_create_bookmarks.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_bookmarks_on_category_id" ON "bookmarks" ("category_id")[0m
+  ↳ db/migrate/20200724003051_create_bookmarks.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200724003051"]]
+  ↳ bin/rails:9
+  [1m[35m (7.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateKinds (20200724005051)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20200724005051_create_kinds.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "kinds" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20200724005051_create_kinds.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200724005051"]]
+  ↳ bin/rails:9
+  [1m[35m (7.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddKindToCategory (20200724005546)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "categories" ADD "kind_id" integer[0m
+  ↳ db/migrate/20200724005546_add_kind_to_category.rb:3
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20200724005546_add_kind_to_category.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_categories_on_kind_id" ON "categories" ("kind_id")[0m
+  ↳ db/migrate/20200724005546_add_kind_to_category.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200724005546"]]
+  ↳ bin/rails:9
+  [1m[35m (8.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddKindToCategory (20200724005546)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TEMPORARY TABLE "acategories" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "visibility" boolean DEFAULT NULL, "category_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "kind_id" integer DEFAULT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "tindex_acategories_on_kind_id" ON "acategories" ("kind_id")[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_acategories_on_category_id" ON "acategories" ("category_id")[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "acategories" ("id","name","visibility","category_id","created_at","updated_at","kind_id")
+                     SELECT "id","name","visibility","category_id","created_at","updated_at","kind_id" FROM "categories"[0m
+  ↳ bin/rails:9
+  [1m[35m (1.6ms)[0m  [1m[35mDROP TABLE "categories"[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "categories" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "visibility" boolean DEFAULT NULL, "category_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_categories_on_category_id" ON "categories" ("category_id")[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("id","name","visibility","category_id","created_at","updated_at")
+                     SELECT "id","name","visibility","category_id","created_at","updated_at" FROM "acategories"[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "acategories"[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20200724005546"]]
+  ↳ bin/rails:9
+  [1m[35m (9.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddKindToBookmark (20200724010218)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "bookmarks" ADD "kind_id" integer[0m
+  ↳ db/migrate/20200724010218_add_kind_to_bookmark.rb:3
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20200724010218_add_kind_to_bookmark.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE  INDEX "index_bookmarks_on_kind_id" ON "bookmarks" ("kind_id")[0m
+  ↳ db/migrate/20200724010218_add_kind_to_bookmark.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200724010218"]]
+  ↳ bin/rails:9
+  [1m[35m (8.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddKindToBookmark (20200724010218)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TEMPORARY TABLE "abookmarks" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "url" varchar DEFAULT NULL, "category_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "kind_id" integer DEFAULT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_abookmarks_on_kind_id" ON "abookmarks" ("kind_id")[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_abookmarks_on_category_id" ON "abookmarks" ("category_id")[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "abookmarks" ("id","name","url","category_id","created_at","updated_at","kind_id")
+                     SELECT "id","name","url","category_id","created_at","updated_at","kind_id" FROM "bookmarks"[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "bookmarks"[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "bookmarks" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "url" varchar DEFAULT NULL, "category_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_bookmarks_on_category_id" ON "bookmarks" ("category_id")[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "bookmarks" ("id","name","url","category_id","created_at","updated_at")
+                     SELECT "id","name","url","category_id","created_at","updated_at" FROM "abookmarks"[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "abookmarks"[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20200724010218"]]
+  ↳ bin/rails:9
+  [1m[35m (7.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddKindToBookmark (20200724010218)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "bookmarks" ADD "kind_id" integer[0m
+  ↳ db/migrate/20200724010218_add_kind_to_bookmark.rb:3
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20200724010218_add_kind_to_bookmark.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_bookmarks_on_kind_id" ON "bookmarks" ("kind_id")[0m
+  ↳ db/migrate/20200724010218_add_kind_to_bookmark.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200724010218"]]
+  ↳ bin/rails:9
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2020-07-23 21:27:24 -0400
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/alejandro/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/sprockets-rails-3.2.1/lib/sprockets/rails/quiet_assets.rb:13
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/alejandro/.rvm/gems/ruby-2.6.3/gems/railties-5.2.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/alejandro/.rvm/gems/ruby-2.6.3/gems/railties-5.2.4.3/lib/rails/templates/rails/welcome/index.html.erb (6.7ms)
+Completed 200 OK in 33ms (Views: 22.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-07-23 21:30:51 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/alejandro/.rvm/gems/ruby-2.6.3/gems/railties-5.2.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/alejandro/.rvm/gems/ruby-2.6.3/gems/railties-5.2.4.3/lib/rails/templates/rails/welcome/index.html.erb (5.2ms)
+Completed 200 OK in 10ms (Views: 7.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books" for ::1 at 2020-07-23 21:30:54 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/books"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/bookmarks" for ::1 at 2020-07-23 21:30:57 -0400
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  [1m[36mBookmark Load (1.4ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:16
+  Rendered bookmarks/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 1671ms (Views: 1642.3ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/bookmarks/new" for ::1 at 2020-07-23 21:31:50 -0400
+Processing by BookmarksController#new as HTML
+  Rendering bookmarks/new.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (43.0ms)
+  Rendered bookmarks/new.html.erb within layouts/application (48.0ms)
+Completed 200 OK in 149ms (Views: 133.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/categories" for ::1 at 2020-07-23 21:32:47 -0400
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (1.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:16
+  Rendered categories/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 122ms (Views: 99.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/categories/new" for ::1 at 2020-07-23 21:32:56 -0400
+Processing by CategoriesController#new as HTML
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (6.9ms)
+  Rendered categories/new.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 81ms (Views: 52.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/categories/new" for ::1 at 2020-07-23 21:33:19 -0400
+Processing by CategoriesController#new as HTML
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (6.0ms)
+  Rendered categories/new.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 71ms (Views: 68.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/categories" for ::1 at 2020-07-23 21:37:11 -0400
+Processing by CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"B80lq9oL+HOAhm5DPfRM5QYlBPYava2tg36iV44jO26JGm6jMeR5D7HYzPV+mnUmc/7+h3M1cKydl5ST9WfDng==", "category"=>{"name"=>"musica", "visibility"=>"true", "category_id"=>""}, "commit"=>"Create Category"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/categories_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/categories_controller.rb:30
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (3.8ms)
+  Rendered categories/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 59ms (Views: 41.8ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/categories" for ::1 at 2020-07-23 21:37:15 -0400
+Processing by CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iL4CuV8EIQk2oNmS1S+4KjOVrbsJzJFs16LSsGlQ58MFuRdMx+9QGFB2n5zjkWoLirFCMThWARRAIbORvJFe2w==", "category"=>{"name"=>"musica", "visibility"=>"true", "category_id"=>"1"}, "commit"=>"Create Category"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/categories_controller.rb:30
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/categories_controller.rb:30
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (5.0ms)
+  Rendered categories/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 71ms (Views: 50.8ms | ActiveRecord: 0.5ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateCategories (20200724002525)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "categories" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "visibility" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20200724002525_create_categories.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200724002525"]]
+  ↳ bin/rails:9
+  [1m[35m (3.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateBookmarks (20200724003051)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "bookmarks" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "url" varchar, "category_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_e91b169454"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+)[0m
+  ↳ db/migrate/20200724003051_create_bookmarks.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_bookmarks_on_category_id" ON "bookmarks" ("category_id")[0m
+  ↳ db/migrate/20200724003051_create_bookmarks.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200724003051"]]
+  ↳ bin/rails:9
+  [1m[35m (4.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateKinds (20200724005051)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "kinds" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20200724005051_create_kinds.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200724005051"]]
+  ↳ bin/rails:9
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to AddKindToBookmark (20200724010218)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "bookmarks" ADD "kind_id" integer[0m
+  ↳ db/migrate/20200724010218_add_kind_to_bookmark.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_bookmarks_on_kind_id" ON "bookmarks" ("kind_id")[0m
+  ↳ db/migrate/20200724010218_add_kind_to_bookmark.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200724010218"]]
+  ↳ bin/rails:9
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-07-24 01:38:51.038511"], ["updated_at", "2020-07-24 01:38:51.038511"]]
+  ↳ bin/rails:9
+  [1m[35m (4.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/categories" for ::1 at 2020-07-23 21:41:45 -0400
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/alejandro/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/sprockets-rails-3.2.1/lib/sprockets/rails/quiet_assets.rb:13
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:16
+  Rendered categories/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 568ms (Views: 542.9ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/categories/new" for ::1 at 2020-07-23 21:41:47 -0400
+Processing by CategoriesController#new as HTML
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (26.8ms)
+  Rendered categories/new.html.erb within layouts/application (28.9ms)
+Completed 200 OK in 84ms (Views: 68.7ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/categories" for ::1 at 2020-07-23 21:41:51 -0400
+Processing by CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TUEnmTcyw7P3xoxdrptLWF0o9zIolmSsmaH2QFduqF3DlmyR3N1Cz8aYLuvt9XKbKPMNQ0Eeua2HSMCELCpQrQ==", "category"=>{"name"=>"musica", "visibility"=>"true", "category_id"=>""}, "commit"=>"Create Category"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'category_id' for Category.):
+  
+app/controllers/categories_controller.rb:27:in `create'
+Started POST "/categories" for ::1 at 2020-07-23 21:41:59 -0400
+Processing by CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VvqYAAWKeifwY4V3jUlpFkKyf7J8SHSF4IzcfhtQ7bfb/Y31nWELNpa1w3m797s3+5aQOE3S5P13D71fzpFUrw==", "category"=>{"name"=>"musica", "visibility"=>"true", "category_id"=>"1"}, "commit"=>"Create Category"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'category_id' for Category.):
+  
+app/controllers/categories_controller.rb:27:in `create'
+Started POST "/categories" for ::1 at 2020-07-23 21:42:17 -0400
+Processing by CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VvqYAAWKeifwY4V3jUlpFkKyf7J8SHSF4IzcfhtQ7bfb/Y31nWELNpa1w3m797s3+5aQOE3S5P13D71fzpFUrw==", "category"=>{"name"=>"musica", "visibility"=>"true", "category_id"=>"1"}, "commit"=>"Create Category"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'category_id' for Category.):
+  
+app/controllers/categories_controller.rb:27:in `create'
+Started POST "/categories" for ::1 at 2020-07-23 21:42:39 -0400
+Processing by CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VvqYAAWKeifwY4V3jUlpFkKyf7J8SHSF4IzcfhtQ7bfb/Y31nWELNpa1w3m797s3+5aQOE3S5P13D71fzpFUrw==", "category"=>{"name"=>"musica", "visibility"=>"true", "category_id"=>"1"}, "commit"=>"Create Category"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'category_id' for Category.):
+  
+app/controllers/categories_controller.rb:27:in `create'
+Started GET "/categories/new" for ::1 at 2020-07-23 21:43:25 -0400
+Processing by CategoriesController#new as HTML
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (11.6ms)
+  Rendered categories/new.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 146ms (Views: 113.6ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/categories" for ::1 at 2020-07-23 21:43:30 -0400
+Processing by CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"l7K9CLlNtS9KXZRpgQU6hnI7+VlzQ2/lJK+MRtLccNwataj9IabEPiyL0me3u+inyx8W00LZ/52zLO1nBx3JxA==", "category"=>{"name"=>"musica", "visibility"=>"true", "category_id"=>"1"}, "commit"=>"Create Category"}
+Unpermitted parameter: :category_id
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/categories_controller.rb:30
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/categories_controller.rb:30
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (5.2ms)
+  Rendered categories/new.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 132ms (Views: 116.9ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/categories" for ::1 at 2020-07-23 21:43:51 -0400
+Processing by CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YTqtYQgoao5ghWugSx0G8+q6Ztun8xlU8cvNU1hdFxnsPbiUkMMbnwZTLa59o9TSU56JUZZpiSxmSKxyjZyuAQ==", "category"=>{"name"=>"musica", "visibility"=>"true", "category_id"=>"''"}, "commit"=>"Create Category"}
+Unpermitted parameter: :category_id
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/categories_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/categories_controller.rb:30
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (4.2ms)
+  Rendered categories/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 58ms (Views: 51.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/categories" for ::1 at 2020-07-23 21:51:14 -0400
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:15
+  Rendered categories/index.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 118ms (Views: 114.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/categories/new" for ::1 at 2020-07-23 21:51:16 -0400
+Processing by CategoriesController#new as HTML
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (4.3ms)
+  Rendered categories/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 53ms (Views: 49.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/categories" for ::1 at 2020-07-23 21:51:20 -0400
+Processing by CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kLrl3dX0hE76EyPr/R00NlbV8pp+JxZuL/IfwKjNGxgeba7VPhsFMstNgV2+cw31Iw4I6xevy28xGykE04nj6A==", "category"=>{"name"=>"musica", "visibility"=>"true"}, "commit"=>"Create Category"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/categories_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/categories_controller.rb:30
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (3.4ms)
+  Rendered categories/new.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 73ms (Views: 67.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/categories" for ::1 at 2020-07-23 21:52:23 -0400
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:15
+  Rendered categories/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 43ms (Views: 33.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/categories/new" for ::1 at 2020-07-23 21:52:24 -0400
+Processing by CategoriesController#new as HTML
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (4.5ms)
+  Rendered categories/new.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 76ms (Views: 56.7ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/categories" for ::1 at 2020-07-23 21:52:29 -0400
+Processing by CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fmse41axzSqrAUs9thQ/9X8S/JCYfEpTo4R71o8WufbwvFXrvV5MVppf6Yv1egY2CskG4fH0l1K9bU0S9FJBBg==", "category"=>{"name"=>"musica", "visibility"=>"true"}, "commit"=>"Create Category"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/categories_controller.rb:30
+  [1m[36mCategory Create (1.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "visibility", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "musica"], ["visibility", 1], ["created_at", "2020-07-24 01:52:29.333968"], ["updated_at", "2020-07-24 01:52:29.333968"]]
+  ↳ app/controllers/categories_controller.rb:30
+  [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/categories_controller.rb:30
+Redirected to http://localhost:3000/categories/1
+Completed 302 Found in 13ms (ActiveRecord: 5.4ms)
+
+
+Started GET "/categories/1" for ::1 at 2020-07-23 21:52:29 -0400
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:67
+  Rendering categories/show.html.erb within layouts/application
+  Rendered categories/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 97ms (Views: 53.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/categories" for ::1 at 2020-07-23 21:52:30 -0400
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:15
+  Rendered categories/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 77ms (Views: 73.9ms | ActiveRecord: 0.2ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateCategories (20200724002525)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "categories" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "visibility" boolean, "category_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_09a423a16c"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+)[0m
+  ↳ db/migrate/20200724002525_create_categories.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "index_categories_on_category_id" ON "categories" ("category_id")[0m
+  ↳ db/migrate/20200724002525_create_categories.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200724002525"]]
+  ↳ bin/rails:9
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateBookmarks (20200724003051)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "bookmarks" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "url" varchar, "category_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_e91b169454"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+)[0m
+  ↳ db/migrate/20200724003051_create_bookmarks.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_bookmarks_on_category_id" ON "bookmarks" ("category_id")[0m
+  ↳ db/migrate/20200724003051_create_bookmarks.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200724003051"]]
+  ↳ bin/rails:9
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateKinds (20200724005051)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "kinds" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20200724005051_create_kinds.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200724005051"]]
+  ↳ bin/rails:9
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to AddKindToBookmark (20200724010218)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "bookmarks" ADD "kind_id" integer[0m
+  ↳ db/migrate/20200724010218_add_kind_to_bookmark.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_bookmarks_on_kind_id" ON "bookmarks" ("kind_id")[0m
+  ↳ db/migrate/20200724010218_add_kind_to_bookmark.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200724010218"]]
+  ↳ bin/rails:9
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (3.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-07-24 01:56:47.764614"], ["updated_at", "2020-07-24 01:56:47.764614"]]
+  ↳ bin/rails:9
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/categories" for ::1 at 2020-07-23 21:57:03 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/alejandro/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/sprockets-rails-3.2.1/lib/sprockets/rails/quiet_assets.rb:13
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:16
+  Rendered categories/index.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 674ms (Views: 607.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/categories/new" for ::1 at 2020-07-23 21:57:06 -0400
+Processing by CategoriesController#new as HTML
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (28.0ms)
+  Rendered categories/new.html.erb within layouts/application (29.7ms)
+Completed 200 OK in 95ms (Views: 73.1ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/categories" for ::1 at 2020-07-23 21:57:11 -0400
+Processing by CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PVtR4uW0bmezxOQtkr3OiWm+J0bEl0i4bvgiIS04c1azjBrqDlvvG4KaRpvR0/dKHGXdN60flblwERTlVnyLpg==", "category"=>{"name"=>"musica", "visibility"=>"true", "category_id"=>""}, "commit"=>"Create Category"}
+Unpermitted parameter: :category_id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/categories_controller.rb:30
+  [1m[36mCategory Create (0.7ms)[0m  [1m[32mINSERT INTO "categories" ("name", "visibility", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "musica"], ["visibility", 1], ["created_at", "2020-07-24 01:57:11.080406"], ["updated_at", "2020-07-24 01:57:11.080406"]]
+  ↳ app/controllers/categories_controller.rb:30
+  [1m[35m (4.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/categories_controller.rb:30
+Redirected to http://localhost:3000/categories/1
+Completed 302 Found in 11ms (ActiveRecord: 4.9ms)
+
+
+Started GET "/categories/1" for ::1 at 2020-07-23 21:57:11 -0400
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:67
+  Rendering categories/show.html.erb within layouts/application
+  Rendered categories/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 66ms (Views: 59.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/categories" for ::1 at 2020-07-23 21:57:12 -0400
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:16
+  Rendered categories/index.html.erb within layouts/application (21.8ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `category' for #<Category:0x00007fc4b40df4f0>
+Did you mean?  category_id):
+    17:       <tr>
+    18:         <td><%= category.name %></td>
+    19:         <td><%= category.visibility %></td>
+    20:         <td><%= category.category %></td>
+    21:         <td><%= link_to 'Show', category %></td>
+    22:         <td><%= link_to 'Edit', edit_category_path(category) %></td>
+    23:         <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  
+app/views/categories/index.html.erb:20:in `block in _app_views_categories_index_html_erb__156156508059684313_70241394682260'
+app/views/categories/index.html.erb:16:in `_app_views_categories_index_html_erb__156156508059684313_70241394682260'
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" ORDER BY "categories"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/categories" for ::1 at 2020-07-23 21:58:26 -0400
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:15
+  Rendered categories/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 82ms (Views: 78.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/categories" for ::1 at 2020-07-23 21:59:31 -0400
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:15
+  Rendered categories/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 57ms (Views: 53.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/categories/new" for ::1 at 2020-07-23 21:59:33 -0400
+Processing by CategoriesController#new as HTML
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (5.5ms)
+  Rendered categories/new.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 60ms (Views: 57.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/categories" for ::1 at 2020-07-23 21:59:40 -0400
+Processing by CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"87oTsRDTT5DolI3o0ozzBqJYV/w5LGZNxuI/87VCcMJ9bVi5+zzO7NnKL16R4srF14OtjVCku0zYCwk3zgaIMg==", "category"=>{"name"=>"musica", "visibility"=>"true"}, "commit"=>"Create Category"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/categories_controller.rb:30
+  [1m[36mCategory Create (0.6ms)[0m  [1m[32mINSERT INTO "categories" ("name", "visibility", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "musica"], ["visibility", 1], ["created_at", "2020-07-24 01:59:40.199564"], ["updated_at", "2020-07-24 01:59:40.199564"]]
+  ↳ app/controllers/categories_controller.rb:30
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/categories_controller.rb:30
+Redirected to http://localhost:3000/categories/2
+Completed 302 Found in 10ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/categories/2" for ::1 at 2020-07-23 21:59:40 -0400
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:67
+  Rendering categories/show.html.erb within layouts/application
+  Rendered categories/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 65ms (Views: 59.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/categories" for ::1 at 2020-07-23 21:59:41 -0400
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:15
+  Rendered categories/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 71ms (Views: 66.3ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/categories/2" for ::1 at 2020-07-23 21:59:47 -0400
+Processing by CategoriesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"bgPlmCnKXgYkRGQMTsDgQChqDMvLqdY8vQA1vX3LM93jBPBtsSEvF0KSIgJ4fjJhkU7jQfozRkQqg1ScqAqKxQ==", "id"=>"2"}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:67
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/categories_controller.rb:57
+  [1m[36mCategory Destroy (0.6ms)[0m  [1m[31mDELETE FROM "categories" WHERE "categories"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/categories_controller.rb:57
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/categories_controller.rb:57
+Redirected to http://localhost:3000/categories
+Completed 302 Found in 6ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/categories" for ::1 at 2020-07-23 21:59:47 -0400
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:15
+  Rendered categories/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 72ms (Views: 69.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/categories/1" for ::1 at 2020-07-23 22:02:22 -0400
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:67
+  Rendering categories/show.html.erb within layouts/application
+  Rendered categories/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 106ms (Views: 102.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/categories" for ::1 at 2020-07-23 22:02:23 -0400
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:15
+  Rendered categories/index.html.erb within layouts/application (72.6ms)
+Completed 200 OK in 122ms (Views: 119.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/books" for ::1 at 2020-07-23 22:03:00 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/books"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/bookmarks" for ::1 at 2020-07-23 22:03:02 -0400
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  [1m[36mBookmark Load (0.5ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:16
+  Rendered bookmarks/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 68ms (Views: 52.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/bookmarks" for ::1 at 2020-07-23 22:07:27 -0400
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:16
+  Rendered bookmarks/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 60ms (Views: 57.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/bookmarks" for ::1 at 2020-07-23 22:13:36 -0400
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:16
+  Rendered bookmarks/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 56ms (Views: 54.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/bookmarks/new" for ::1 at 2020-07-23 22:13:39 -0400
+Processing by BookmarksController#new as JS
+  Rendering bookmarks/new.js.erb
+  Rendered bookmarks/_form.html.erb (2.8ms)
+  Rendered bookmarks/new.js.erb (11.4ms)
+Completed 200 OK in 37ms (Views: 18.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/bookmarks" for ::1 at 2020-07-23 22:13:46 -0400
+Processing by BookmarksController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IddHlpMMiY4NtbZQVJNrCUdQiplMWLQc25tjwoTMY7ffob6zwpWQfLGvToSfx7H4La27ZNmU+yQorhAeQHGMVg==", "bookmark"=>{"name"=>"sad", "url"=>"asd"}, "commit"=>"Create Bookmark"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/bookmarks_controller.rb:30
+  Rendering bookmarks/new.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (3.2ms)
+  Rendered bookmarks/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 61ms (Views: 33.2ms | ActiveRecord: 0.1ms)
+
+
+  [1m[36mBookmark Load (0.4ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mKind Create (0.6ms)[0m  [1m[32mINSERT INTO "kinds" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "tipoPrueba1"], ["created_at", "2020-07-24 02:18:32.910036"], ["updated_at", "2020-07-24 02:18:32.910036"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mKind Create (4.1ms)[0m  [1m[32mINSERT INTO "kinds" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "tipoPrueba1"], ["created_at", "2020-07-24 02:18:32.920076"], ["updated_at", "2020-07-24 02:18:32.920076"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mKind Create (0.4ms)[0m  [1m[32mINSERT INTO "kinds" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "tipoPrueba2"], ["created_at", "2020-07-24 02:18:32.929846"], ["updated_at", "2020-07-24 02:18:32.929846"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mKind Create (0.5ms)[0m  [1m[32mINSERT INTO "kinds" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "tipoPrueba1"], ["created_at", "2020-07-24 02:18:32.936134"], ["updated_at", "2020-07-24 02:18:32.936134"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mKind Create (0.4ms)[0m  [1m[32mINSERT INTO "kinds" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "tipoPrueba3"], ["created_at", "2020-07-24 02:18:32.946198"], ["updated_at", "2020-07-24 02:18:32.946198"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mKind Create (1.2ms)[0m  [1m[32mINSERT INTO "kinds" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "tipoPrueba3"], ["created_at", "2020-07-24 02:18:32.953005"], ["updated_at", "2020-07-24 02:18:32.953005"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mKind Create (0.4ms)[0m  [1m[32mINSERT INTO "kinds" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "tipoPrueba2"], ["created_at", "2020-07-24 02:18:33.040634"], ["updated_at", "2020-07-24 02:18:33.040634"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mKind Create (0.4ms)[0m  [1m[32mINSERT INTO "kinds" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "tipoPrueba1"], ["created_at", "2020-07-24 02:18:33.051206"], ["updated_at", "2020-07-24 02:18:33.051206"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mKind Create (0.6ms)[0m  [1m[32mINSERT INTO "kinds" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "tipoPrueba2"], ["created_at", "2020-07-24 02:18:33.058620"], ["updated_at", "2020-07-24 02:18:33.058620"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (3.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mKind Create (1.8ms)[0m  [1m[32mINSERT INTO "kinds" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "tipoPrueba2"], ["created_at", "2020-07-24 02:18:33.066664"], ["updated_at", "2020-07-24 02:18:33.066664"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+Started GET "/categories" for ::1 at 2020-07-23 22:18:36 -0400
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (1.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:15
+  Rendered categories/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 65ms (Views: 61.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/categories" for ::1 at 2020-07-23 22:18:37 -0400
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:15
+  Rendered categories/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 55ms (Views: 52.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/kinds" for ::1 at 2020-07-23 22:18:44 -0400
+Processing by KindsController#index as HTML
+  Rendering kinds/index.html.erb within layouts/application
+  [1m[36mKind Load (0.3ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ app/views/kinds/index.html.erb:14
+  Rendered kinds/index.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 62ms (Views: 56.3ms | ActiveRecord: 1.3ms)
+
+
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mCategory Load (1.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mBookmark Load (1.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mCategory Load (1.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."category_id" = ?[0m  [["category_id", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mCategory Destroy (1.0ms)[0m  [1m[31mDELETE FROM "categories" WHERE "categories"."id" = ?[0m  [["id", 1]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mKind Create (2.3ms)[0m  [1m[32mINSERT INTO "kinds" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "tipoPrueba3"], ["created_at", "2020-07-24 02:25:50.421681"], ["updated_at", "2020-07-24 02:25:50.421681"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mKind Create (0.5ms)[0m  [1m[32mINSERT INTO "kinds" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "tipoPrueba2"], ["created_at", "2020-07-24 02:25:50.431034"], ["updated_at", "2020-07-24 02:25:50.431034"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mKind Create (1.8ms)[0m  [1m[32mINSERT INTO "kinds" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "tipoPrueba2"], ["created_at", "2020-07-24 02:25:50.435495"], ["updated_at", "2020-07-24 02:25:50.435495"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mKind Create (0.5ms)[0m  [1m[32mINSERT INTO "kinds" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "tipoPrueba1"], ["created_at", "2020-07-24 02:25:50.445689"], ["updated_at", "2020-07-24 02:25:50.445689"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mKind Create (1.3ms)[0m  [1m[32mINSERT INTO "kinds" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "tipoPrueba1"], ["created_at", "2020-07-24 02:25:50.451432"], ["updated_at", "2020-07-24 02:25:50.451432"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mKind Create (0.5ms)[0m  [1m[32mINSERT INTO "kinds" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "tipoPrueba1"], ["created_at", "2020-07-24 02:25:50.459779"], ["updated_at", "2020-07-24 02:25:50.459779"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mKind Create (0.4ms)[0m  [1m[32mINSERT INTO "kinds" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "tipoPrueba2"], ["created_at", "2020-07-24 02:25:50.464347"], ["updated_at", "2020-07-24 02:25:50.464347"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mKind Create (1.5ms)[0m  [1m[32mINSERT INTO "kinds" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "tipoPrueba2"], ["created_at", "2020-07-24 02:25:50.467811"], ["updated_at", "2020-07-24 02:25:50.467811"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mKind Create (0.5ms)[0m  [1m[32mINSERT INTO "kinds" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "tipoPrueba1"], ["created_at", "2020-07-24 02:25:50.473363"], ["updated_at", "2020-07-24 02:25:50.473363"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mKind Create (0.4ms)[0m  [1m[32mINSERT INTO "kinds" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "tipoPrueba1"], ["created_at", "2020-07-24 02:25:50.477159"], ["updated_at", "2020-07-24 02:25:50.477159"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "visibility", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "categoria3"], ["visibility", 1], ["created_at", "2020-07-24 02:25:50.482316"], ["updated_at", "2020-07-24 02:25:50.482316"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mCategory Create (0.9ms)[0m  [1m[32mINSERT INTO "categories" ("name", "visibility", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "categoria3"], ["visibility", 1], ["created_at", "2020-07-24 02:25:50.488608"], ["updated_at", "2020-07-24 02:25:50.488608"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("name", "visibility", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "categoria2"], ["visibility", 1], ["created_at", "2020-07-24 02:25:50.497558"], ["updated_at", "2020-07-24 02:25:50.497558"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mCategory Create (0.9ms)[0m  [1m[32mINSERT INTO "categories" ("name", "visibility", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "categoria2"], ["visibility", 1], ["created_at", "2020-07-24 02:25:50.501566"], ["updated_at", "2020-07-24 02:25:50.501566"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "visibility", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "categoria2"], ["visibility", 1], ["created_at", "2020-07-24 02:25:50.508084"], ["updated_at", "2020-07-24 02:25:50.508084"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mCategory Create (0.7ms)[0m  [1m[32mINSERT INTO "categories" ("name", "visibility", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "categoria3"], ["visibility", 1], ["created_at", "2020-07-24 02:25:50.511969"], ["updated_at", "2020-07-24 02:25:50.511969"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("name", "visibility", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "categoria2"], ["visibility", 1], ["created_at", "2020-07-24 02:25:50.516255"], ["updated_at", "2020-07-24 02:25:50.516255"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mCategory Create (0.7ms)[0m  [1m[32mINSERT INTO "categories" ("name", "visibility", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "categoria3"], ["visibility", 1], ["created_at", "2020-07-24 02:25:50.523268"], ["updated_at", "2020-07-24 02:25:50.523268"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mCategory Create (0.6ms)[0m  [1m[32mINSERT INTO "categories" ("name", "visibility", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "categoria3"], ["visibility", 1], ["created_at", "2020-07-24 02:25:50.528075"], ["updated_at", "2020-07-24 02:25:50.528075"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "visibility", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "categoria2"], ["visibility", 1], ["created_at", "2020-07-24 02:25:50.531973"], ["updated_at", "2020-07-24 02:25:50.531973"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:27
+Started GET "/kinds" for ::1 at 2020-07-23 22:25:56 -0400
+Processing by KindsController#index as HTML
+  Rendering kinds/index.html.erb within layouts/application
+  [1m[36mKind Load (0.2ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ app/views/kinds/index.html.erb:14
+  Rendered kinds/index.html.erb within layouts/application (22.2ms)
+Completed 200 OK in 131ms (Views: 109.7ms | ActiveRecord: 1.2ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (13.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateCategories (20200724002525)
+  [1m[35m (0.9ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "categories" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "visibility" boolean, "category_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_09a423a16c"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+)[0m
+  ↳ db/migrate/20200724002525_create_categories.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE  INDEX "index_categories_on_category_id" ON "categories" ("category_id")[0m
+  ↳ db/migrate/20200724002525_create_categories.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200724002525"]]
+  ↳ bin/rails:9
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateBookmarks (20200724003051)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "bookmarks" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "url" varchar, "category_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_e91b169454"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+)[0m
+  ↳ db/migrate/20200724003051_create_bookmarks.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "index_bookmarks_on_category_id" ON "bookmarks" ("category_id")[0m
+  ↳ db/migrate/20200724003051_create_bookmarks.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200724003051"]]
+  ↳ bin/rails:9
+  [1m[35m (4.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateKinds (20200724005051)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "kinds" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20200724005051_create_kinds.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200724005051"]]
+  ↳ bin/rails:9
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to AddKindToBookmark (20200724010218)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "bookmarks" ADD "kind_id" integer[0m
+  ↳ db/migrate/20200724010218_add_kind_to_bookmark.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_bookmarks_on_kind_id" ON "bookmarks" ("kind_id")[0m
+  ↳ db/migrate/20200724010218_add_kind_to_bookmark.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200724010218"]]
+  ↳ bin/rails:9
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-07-24 02:27:03.124315"], ["updated_at", "2020-07-24 02:27:03.124315"]]
+  ↳ bin/rails:9
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/kinds" for ::1 at 2020-07-23 22:27:05 -0400
+Processing by KindsController#index as HTML
+  Rendering kinds/index.html.erb within layouts/application
+  [1m[36mKind Load (0.3ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ app/views/kinds/index.html.erb:14
+  Rendered kinds/index.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 144ms (Views: 137.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/kinds" for ::1 at 2020-07-23 22:27:06 -0400
+Processing by KindsController#index as HTML
+  Rendering kinds/index.html.erb within layouts/application
+  [1m[36mKind Load (0.2ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ app/views/kinds/index.html.erb:14
+  Rendered kinds/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 59ms (Views: 56.7ms | ActiveRecord: 0.2ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mKind Create (1.1ms)[0m  [1m[32mINSERT INTO "kinds" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "tipoPrueba2"], ["created_at", "2020-07-24 02:27:15.860855"], ["updated_at", "2020-07-24 02:27:15.860855"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (3.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mKind Create (0.4ms)[0m  [1m[32mINSERT INTO "kinds" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "tipoPrueba2"], ["created_at", "2020-07-24 02:27:15.877749"], ["updated_at", "2020-07-24 02:27:15.877749"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mKind Create (1.1ms)[0m  [1m[32mINSERT INTO "kinds" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "tipoPrueba1"], ["created_at", "2020-07-24 02:27:15.889103"], ["updated_at", "2020-07-24 02:27:15.889103"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (6.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mKind Create (0.9ms)[0m  [1m[32mINSERT INTO "kinds" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "tipoPrueba2"], ["created_at", "2020-07-24 02:27:15.993299"], ["updated_at", "2020-07-24 02:27:15.993299"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mKind Create (0.4ms)[0m  [1m[32mINSERT INTO "kinds" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "tipoPrueba2"], ["created_at", "2020-07-24 02:27:15.999456"], ["updated_at", "2020-07-24 02:27:15.999456"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (4.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mKind Create (0.6ms)[0m  [1m[32mINSERT INTO "kinds" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "tipoPrueba3"], ["created_at", "2020-07-24 02:27:16.005914"], ["updated_at", "2020-07-24 02:27:16.005914"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mKind Create (0.9ms)[0m  [1m[32mINSERT INTO "kinds" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "tipoPrueba1"], ["created_at", "2020-07-24 02:27:16.013762"], ["updated_at", "2020-07-24 02:27:16.013762"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (11.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mKind Create (1.0ms)[0m  [1m[32mINSERT INTO "kinds" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "tipoPrueba3"], ["created_at", "2020-07-24 02:27:16.030905"], ["updated_at", "2020-07-24 02:27:16.030905"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mKind Create (0.5ms)[0m  [1m[32mINSERT INTO "kinds" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "tipoPrueba1"], ["created_at", "2020-07-24 02:27:16.051808"], ["updated_at", "2020-07-24 02:27:16.051808"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (4.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mKind Create (1.4ms)[0m  [1m[32mINSERT INTO "kinds" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "tipoPrueba1"], ["created_at", "2020-07-24 02:27:16.059325"], ["updated_at", "2020-07-24 02:27:16.059325"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mCategory Create (1.0ms)[0m  [1m[32mINSERT INTO "categories" ("name", "visibility", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "categoria1"], ["visibility", 1], ["created_at", "2020-07-24 02:27:16.126641"], ["updated_at", "2020-07-24 02:27:16.126641"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (12.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mCategory Create (0.6ms)[0m  [1m[32mINSERT INTO "categories" ("name", "visibility", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "categoria3"], ["visibility", 1], ["created_at", "2020-07-24 02:27:16.144073"], ["updated_at", "2020-07-24 02:27:16.144073"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mCategory Create (1.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "visibility", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "categoria2"], ["visibility", 1], ["created_at", "2020-07-24 02:27:16.148186"], ["updated_at", "2020-07-24 02:27:16.148186"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (9.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mCategory Create (1.1ms)[0m  [1m[32mINSERT INTO "categories" ("name", "visibility", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "categoria1"], ["visibility", 1], ["created_at", "2020-07-24 02:27:16.161126"], ["updated_at", "2020-07-24 02:27:16.161126"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mCategory Create (0.8ms)[0m  [1m[32mINSERT INTO "categories" ("name", "visibility", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "categoria3"], ["visibility", 1], ["created_at", "2020-07-24 02:27:16.166062"], ["updated_at", "2020-07-24 02:27:16.166062"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (10.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mCategory Create (0.8ms)[0m  [1m[32mINSERT INTO "categories" ("name", "visibility", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "categoria2"], ["visibility", 1], ["created_at", "2020-07-24 02:27:16.181515"], ["updated_at", "2020-07-24 02:27:16.181515"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (5.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mCategory Create (0.8ms)[0m  [1m[32mINSERT INTO "categories" ("name", "visibility", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "categoria3"], ["visibility", 1], ["created_at", "2020-07-24 02:27:16.198087"], ["updated_at", "2020-07-24 02:27:16.198087"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (10.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mCategory Create (1.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "visibility", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "categoria1"], ["visibility", 1], ["created_at", "2020-07-24 02:27:16.225410"], ["updated_at", "2020-07-24 02:27:16.225410"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (4.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mCategory Create (0.6ms)[0m  [1m[32mINSERT INTO "categories" ("name", "visibility", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "categoria1"], ["visibility", 1], ["created_at", "2020-07-24 02:27:16.233144"], ["updated_at", "2020-07-24 02:27:16.233144"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("name", "visibility", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "categoria2"], ["visibility", 1], ["created_at", "2020-07-24 02:27:16.244889"], ["updated_at", "2020-07-24 02:27:16.244889"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:27
+Started GET "/kinds" for ::1 at 2020-07-23 22:27:17 -0400
+Processing by KindsController#index as HTML
+  Rendering kinds/index.html.erb within layouts/application
+  [1m[36mKind Load (0.5ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ app/views/kinds/index.html.erb:14
+  Rendered kinds/index.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 61ms (Views: 56.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2020-07-23 22:33:59 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/alejandro/.rvm/gems/ruby-2.6.3/gems/railties-5.2.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/alejandro/.rvm/gems/ruby-2.6.3/gems/railties-5.2.4.3/lib/rails/templates/rails/welcome/index.html.erb (3.5ms)
+Completed 200 OK in 15ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/bookmarks" for ::1 at 2020-07-23 22:34:39 -0400
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  [1m[36mBookmark Load (1.4ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:16
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered bookmarks/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 90ms (Views: 74.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/bookmarks/new" for ::1 at 2020-07-23 22:34:42 -0400
+Processing by BookmarksController#new as JS
+  Rendering bookmarks/new.js.erb
+  Rendered bookmarks/_form.html.erb (4.3ms)
+  Rendered bookmarks/new.js.erb (12.7ms)
+Completed 200 OK in 59ms (Views: 18.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/bookmarks" for ::1 at 2020-07-23 22:34:47 -0400
+Processing by BookmarksController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pG/COhEqEBYqopbUhSQahMysq+MX5/pwz63SUGCDAotaGTsfQLMJ5Ja4bgBOcMB1plGaHoIrtUg8mKGMpD7tag==", "bookmark"=>{"name"=>"sad", "url"=>"asd"}, "commit"=>"Create Bookmark"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/bookmarks_controller.rb:30
+  Rendering bookmarks/new.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (2.3ms)
+  Rendered bookmarks/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 52ms (Views: 36.3ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/bookmarks" for ::1 at 2020-07-23 22:35:39 -0400
+Processing by BookmarksController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pG/COhEqEBYqopbUhSQahMysq+MX5/pwz63SUGCDAotaGTsfQLMJ5Ja4bgBOcMB1plGaHoIrtUg8mKGMpD7tag==", "bookmark"=>{"name"=>"sad", "url"=>"asd"}, "commit"=>"Create Bookmark"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/bookmarks_controller.rb:30
+  Rendering bookmarks/new.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (3.2ms)
+  Rendered bookmarks/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 47ms (Views: 38.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/bookmarks" for ::1 at 2020-07-23 22:36:37 -0400
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  [1m[36mBookmark Load (0.4ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:16
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered bookmarks/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 53ms (Views: 50.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/bookmarks" for ::1 at 2020-07-23 22:36:38 -0400
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:16
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered bookmarks/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 56ms (Views: 54.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/bookmarks" for ::1 at 2020-07-23 22:36:38 -0400
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  [1m[36mBookmark Load (0.3ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:16
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered bookmarks/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 69ms (Views: 67.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/bookmarks/new" for ::1 at 2020-07-23 22:36:39 -0400
+Processing by BookmarksController#new as JS
+  Rendering bookmarks/new.js.erb
+  Rendered bookmarks/_form.html.erb (2.8ms)
+  Rendered bookmarks/new.js.erb (10.7ms)
+Completed 200 OK in 23ms (Views: 17.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/bookmarks" for ::1 at 2020-07-23 22:36:41 -0400
+Processing by BookmarksController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yj/xoWI3RiIdc1iRSSHyuk5XOl0pBafjoLtj7XCA1sg0SQiEM65f0KFpoEWCdShLJKoLoLzJ6NtTjhAxtD05KQ==", "bookmark"=>{"name"=>"sad", "url"=>"asd"}, "commit"=>"Create Bookmark"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/bookmarks_controller.rb:30
+  Rendering bookmarks/new.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (5.3ms)
+  Rendered bookmarks/new.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 52ms (Views: 47.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-07-23 22:36:45 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/alejandro/.rvm/gems/ruby-2.6.3/gems/railties-5.2.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/alejandro/.rvm/gems/ruby-2.6.3/gems/railties-5.2.4.3/lib/rails/templates/rails/welcome/index.html.erb (3.6ms)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/bookmarks" for ::1 at 2020-07-23 22:36:47 -0400
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:16
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered bookmarks/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 80ms (Views: 77.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/bookmarks" for ::1 at 2020-07-23 22:37:06 -0400
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/alejandro/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/sprockets-rails-3.2.1/lib/sprockets/rails/quiet_assets.rb:13
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  [1m[36mBookmark Load (0.3ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:16
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered bookmarks/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 401ms (Views: 381.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/bookmarks/new" for ::1 at 2020-07-23 22:37:07 -0400
+Processing by BookmarksController#new as JS
+  Rendering bookmarks/new.js.erb
+  Rendered bookmarks/_form.html.erb (18.9ms)
+  Rendered bookmarks/new.js.erb (23.0ms)
+Completed 200 OK in 41ms (Views: 29.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/bookmarks" for ::1 at 2020-07-23 22:37:09 -0400
+Processing by BookmarksController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NooNqyI5rfPUSaT12bCgABS3RGc4pX2J4dU9X+24fZzI/PSOc6C0AWhTXCES5Hrxfkp1mq1pMrES4E6DKQWSfQ==", "bookmark"=>{"name"=>"sad", "url"=>"asd"}, "commit"=>"Create Bookmark"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/bookmarks_controller.rb:30
+  Rendering bookmarks/new.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (2.9ms)
+  Rendered bookmarks/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 63ms (Views: 38.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/bookmarks" for ::1 at 2020-07-23 22:39:32 -0400
+Processing by BookmarksController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NooNqyI5rfPUSaT12bCgABS3RGc4pX2J4dU9X+24fZzI/PSOc6C0AWhTXCES5Hrxfkp1mq1pMrES4E6DKQWSfQ==", "bookmark"=>{"name"=>"sad", "url"=>"asd"}, "commit"=>"Create Bookmark"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/bookmarks_controller.rb:30
+  Rendering bookmarks/new.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (2.9ms)
+  Rendered bookmarks/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 57ms (Views: 50.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/bookmarks" for ::1 at 2020-07-23 22:43:10 -0400
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:16
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered bookmarks/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 64ms (Views: 60.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/bookmarks/new" for ::1 at 2020-07-23 22:43:12 -0400
+Processing by BookmarksController#new as JS
+  Rendering bookmarks/new.js.erb
+  Rendered bookmarks/_form.html.erb (5.9ms)
+  Rendered bookmarks/new.js.erb (10.5ms)
+Completed 200 OK in 27ms (Views: 19.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/bookmarks" for ::1 at 2020-07-23 22:43:17 -0400
+Processing by BookmarksController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"d+6akS3eT4zwE11D5j3Y8H9M024eIpQUCmM5H8JcPPGJmGO0fEdWfkwJpZctaQIBFbHik4vu2yz5VkrDBuHTEA==", "bookmark"=>{"name"=>"sad", "url"=>"asd", "category_id"=>"2", "kind_id"=>"2"}, "commit"=>"Create Bookmark"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[36mCategory Load (1.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[36mKind Load (1.3ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[36mBookmark Create (2.7ms)[0m  [1m[32mINSERT INTO "bookmarks" ("name", "url", "category_id", "created_at", "updated_at", "kind_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "sad"], ["url", "asd"], ["category_id", 2], ["created_at", "2020-07-24 02:43:17.092025"], ["updated_at", "2020-07-24 02:43:17.092025"], ["kind_id", 2]]
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/bookmarks_controller.rb:30
+  Rendering bookmarks/create.js.erb
+  Rendered bookmarks/_bookmark.html.erb (1.6ms)
+  Rendered bookmarks/create.js.erb (4.4ms)
+Completed 200 OK in 54ms (Views: 6.2ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/bookmarks" for ::1 at 2020-07-23 22:43:37 -0400
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  [1m[36mBookmark Load (0.3ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:17
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  Rendered collection of bookmarks/_bookmark.html.erb [1 times] (2.2ms)
+  Rendered bookmarks/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 58ms (Views: 54.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/bookmarks/new" for ::1 at 2020-07-23 22:43:38 -0400
+Processing by BookmarksController#new as JS
+  Rendering bookmarks/new.js.erb
+  Rendered bookmarks/_form.html.erb (2.4ms)
+  Rendered bookmarks/new.js.erb (7.0ms)
+Completed 200 OK in 20ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/bookmarks" for ::1 at 2020-07-23 22:43:43 -0400
+Processing by BookmarksController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IibY3cMioT8VeOB7cXmZOzLC5dZN/WSHTqF/pYy7mYLcUCH4kru4zaliGK+6LUPKWD/UK9gxK7+9lAx5SAZ2Yw==", "bookmark"=>{"name"=>"sad", "url"=>"asd", "category_id"=>"1", "kind_id"=>"1"}, "commit"=>"Create Bookmark"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[36mKind Load (0.2ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[36mBookmark Create (0.6ms)[0m  [1m[32mINSERT INTO "bookmarks" ("name", "url", "category_id", "created_at", "updated_at", "kind_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "sad"], ["url", "asd"], ["category_id", 1], ["created_at", "2020-07-24 02:43:43.626393"], ["updated_at", "2020-07-24 02:43:43.626393"], ["kind_id", 1]]
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/bookmarks_controller.rb:30
+  Rendering bookmarks/create.js.erb
+  Rendered bookmarks/_bookmark.html.erb (34.0ms)
+  Rendered bookmarks/create.js.erb (36.3ms)
+Completed 200 OK in 53ms (Views: 40.5ms | ActiveRecord: 3.1ms)
+
+
