@@ -7,6 +7,19 @@ class CategoriesController < ApplicationController
     @categories = Category.all
   end
 
+  def api
+    categories = Category.all.order(created_at: :desc)
+    @categories = categories.map {|category| {
+      id: category.id,
+      name: category.name,
+      bookmarks_name: category.bookmarks {|mark| mark.name}.map {|mark| mark.name },
+      bookmarks_url: category.bookmarks {|mark| mark.name}.map {|mark| mark.url }
+  
+    }}
+  
+    render json:@categories
+  end
+
   # GET /categories/1
   # GET /categories/1.json
   def show

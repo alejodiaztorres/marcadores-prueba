@@ -1800,3 +1800,2429 @@ Processing by BookmarksController#create as JS
 Completed 200 OK in 53ms (Views: 40.5ms | ActiveRecord: 3.1ms)
 
 
+Started GET "/bookmarks" for ::1 at 2020-07-23 23:08:21 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/alejandro/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/sprockets-rails-3.2.1/lib/sprockets/rails/quiet_assets.rb:13
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  [1m[36mBookmark Load (0.4ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:16
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  Rendered collection of bookmarks/_bookmark.html.erb [2 times] (72.5ms)
+  Rendered bookmarks/index.html.erb within layouts/application (147.2ms)
+Completed 200 OK in 2117ms (Views: 2075.7ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/bookmarks/new" for ::1 at 2020-07-23 23:08:27 -0400
+Processing by BookmarksController#new as JS
+  Rendering bookmarks/new.js.erb
+  Rendered bookmarks/_form.html.erb (23.8ms)
+  Rendered bookmarks/new.js.erb (39.6ms)
+Completed 200 OK in 65ms (Views: 48.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/bookmarks" for ::1 at 2020-07-23 23:08:32 -0400
+Processing by BookmarksController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"soGIX7nYLlZRXeI0MUBJrz+jlRXVgutwtNeA63L56B5M93F66EE3pO1HGuD6FJNeVV6k6EBOpEhH4vM3tkQH/w==", "bookmark"=>{"name"=>"sad", "url"=>"asd", "category_id"=>"2", "kind_id"=>"2"}, "commit"=>"Create Bookmark"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[36mKind Load (0.2ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[36mBookmark Create (0.9ms)[0m  [1m[32mINSERT INTO "bookmarks" ("name", "url", "category_id", "created_at", "updated_at", "kind_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "sad"], ["url", "asd"], ["category_id", 2], ["created_at", "2020-07-24 03:08:32.540569"], ["updated_at", "2020-07-24 03:08:32.540569"], ["kind_id", 2]]
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[35m (4.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/bookmarks_controller.rb:30
+  Rendering bookmarks/create.js.erb
+  Rendered bookmarks/_bookmark.html.erb (1.4ms)
+  Rendered bookmarks/create.js.erb (4.0ms)
+Completed 200 OK in 45ms (Views: 8.3ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/" for ::1 at 2020-07-23 23:28:06 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/alejandro/.rvm/gems/ruby-2.6.3/gems/railties-5.2.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/alejandro/.rvm/gems/ruby-2.6.3/gems/railties-5.2.4.3/lib/rails/templates/rails/welcome/index.html.erb (6.2ms)
+Completed 200 OK in 28ms (Views: 10.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/bookmarks" for ::1 at 2020-07-23 23:28:18 -0400
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  [1m[36mBookmark Load (2.1ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:16
+  [1m[36mCategory Load (1.8ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  Rendered collection of bookmarks/_bookmark.html.erb [3 times] (15.2ms)
+  Rendered bookmarks/index.html.erb within layouts/application (29.8ms)
+Completed 200 OK in 235ms (Views: 225.1ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/bookmarks/new" for ::1 at 2020-07-23 23:28:21 -0400
+Processing by BookmarksController#new as JS
+  Rendering bookmarks/new.js.erb
+  Rendered bookmarks/_form.html.erb (6.5ms)
+  Rendered bookmarks/new.js.erb (11.4ms)
+Completed 200 OK in 24ms (Views: 16.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/bookmarks" for ::1 at 2020-07-23 23:28:26 -0400
+Processing by BookmarksController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MXUajx/0eLFY56SrZOnmoTjyCDSpCjAkMh/sWG8RN0DPA+OqTm1hQ+T9XH+vvTxQUg85yTzGfxzBKp+Eq6zYoQ==", "bookmark"=>{"name"=>"sad", "url"=>"asd", "category_id"=>"2", "kind_id"=>"2"}, "commit"=>"Create Bookmark"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[36mKind Load (1.2ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[36mBookmark Create (3.6ms)[0m  [1m[32mINSERT INTO "bookmarks" ("name", "url", "category_id", "created_at", "updated_at", "kind_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "sad"], ["url", "asd"], ["category_id", 2], ["created_at", "2020-07-24 03:28:26.184864"], ["updated_at", "2020-07-24 03:28:26.184864"], ["kind_id", 2]]
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/bookmarks_controller.rb:30
+  Rendering bookmarks/create.js.erb
+  Rendered bookmarks/_bookmark.html.erb (0.9ms)
+  Rendered bookmarks/create.js.erb (2.2ms)
+Completed 200 OK in 21ms (Views: 3.9ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/categories" for ::1 at 2020-07-23 23:32:03 -0400
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:15
+  Rendered categories/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 42ms (Views: 36.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/bookmarks" for ::1 at 2020-07-23 23:32:35 -0400
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:16
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  Rendered collection of bookmarks/_bookmark.html.erb [4 times] (7.3ms)
+  Rendered bookmarks/index.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 121ms (Views: 118.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/bookmarks/new" for ::1 at 2020-07-23 23:32:57 -0400
+Processing by BookmarksController#new as JS
+  Rendering bookmarks/new.js.erb
+  Rendered bookmarks/_form.html.erb (4.4ms)
+  Rendered bookmarks/new.js.erb (10.0ms)
+Completed 200 OK in 26ms (Views: 16.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/bookmarks" for ::1 at 2020-07-23 23:33:15 -0400
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:16
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  Rendered collection of bookmarks/_bookmark.html.erb [4 times] (15.0ms)
+  Rendered bookmarks/index.html.erb within layouts/application (18.6ms)
+Completed 200 OK in 87ms (Views: 83.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/bookmarks" for ::1 at 2020-07-23 23:35:29 -0400
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:16
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  Rendered collection of bookmarks/_bookmark.html.erb [4 times] (11.7ms)
+  Rendered bookmarks/index.html.erb within layouts/application (16.8ms)
+Completed 200 OK in 130ms (Views: 124.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/bookmarks/new" for ::1 at 2020-07-23 23:35:53 -0400
+Processing by BookmarksController#new as JS
+  Rendering bookmarks/new.js.erb
+  Rendered bookmarks/_form.html.erb (10.4ms)
+  Rendered bookmarks/new.js.erb (20.8ms)
+Completed 200 OK in 55ms (Views: 34.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/bookmarks" for ::1 at 2020-07-23 23:36:09 -0400
+Processing by BookmarksController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NKQaamTCrvIfgsNbtIiXOCGl1URkLMOYi8UIgVeiXW7K0uNPNVu3AKOYO49/3E3JS1jkufHgjKB48Htdkx+yjw==", "bookmark"=>{"name"=>"sad", "url"=>"asd", "category_id"=>"2", "kind_id"=>"2"}, "commit"=>"Create Bookmark"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[36mBookmark Create (1.0ms)[0m  [1m[32mINSERT INTO "bookmarks" ("name", "url", "category_id", "created_at", "updated_at", "kind_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "sad"], ["url", "asd"], ["category_id", 2], ["created_at", "2020-07-24 03:36:09.447856"], ["updated_at", "2020-07-24 03:36:09.447856"], ["kind_id", 2]]
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[35m (7.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/bookmarks_controller.rb:30
+  Rendering bookmarks/create.js.erb
+  Rendered bookmarks/_bookmark.html.erb (2.4ms)
+  Rendered bookmarks/create.js.erb (7.7ms)
+Completed 200 OK in 34ms (Views: 13.8ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/bookmarks" for ::1 at 2020-07-23 23:36:27 -0400
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  [1m[36mBookmark Load (0.4ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:16
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  Rendered collection of bookmarks/_bookmark.html.erb [5 times] (16.0ms)
+  Rendered bookmarks/index.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 99ms (Views: 92.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/bookmarks" for ::1 at 2020-07-23 23:39:06 -0400
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  [1m[36mBookmark Load (0.3ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:16
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  Rendered collection of bookmarks/_bookmark.html.erb [5 times] (11.5ms)
+  Rendered bookmarks/index.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 101ms (Views: 97.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/bookmarks/new" for ::1 at 2020-07-23 23:39:07 -0400
+Processing by BookmarksController#new as JS
+  Rendering bookmarks/new.js.erb
+  Rendered bookmarks/_form.html.erb (3.4ms)
+  Rendered bookmarks/new.js.erb (7.6ms)
+Completed 200 OK in 27ms (Views: 20.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/bookmarks" for ::1 at 2020-07-23 23:39:12 -0400
+Processing by BookmarksController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+E/0A3ebs5B1xD1gHsamArZSicoQWBr98eXTUhIhPuwGOQ0mJgKqYsnexbTVknzz3K+4N4WUVcUC0KCO1pzRDQ==", "bookmark"=>{"name"=>"sad", "url"=>"asd", "category_id"=>"2", "kind_id"=>"1"}, "commit"=>"Create Bookmark"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[36mBookmark Create (0.9ms)[0m  [1m[32mINSERT INTO "bookmarks" ("name", "url", "category_id", "created_at", "updated_at", "kind_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "sad"], ["url", "asd"], ["category_id", 2], ["created_at", "2020-07-24 03:39:12.578691"], ["updated_at", "2020-07-24 03:39:12.578691"], ["kind_id", 1]]
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[35m (4.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/bookmarks_controller.rb:30
+  Rendering bookmarks/create.js.erb
+  Rendered bookmarks/_bookmark.html.erb (1.5ms)
+  Rendered bookmarks/create.js.erb (3.4ms)
+Completed 200 OK in 22ms (Views: 6.7ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/bookmarks" for ::1 at 2020-07-23 23:39:19 -0400
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:16
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  Rendered collection of bookmarks/_bookmark.html.erb [6 times] (22.3ms)
+  Rendered bookmarks/index.html.erb within layouts/application (25.8ms)
+Completed 200 OK in 78ms (Views: 76.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/bookmarks/new" for ::1 at 2020-07-23 23:39:26 -0400
+Processing by BookmarksController#new as JS
+  Rendering bookmarks/new.js.erb
+  Rendered bookmarks/_form.html.erb (5.0ms)
+  Rendered bookmarks/new.js.erb (11.4ms)
+Completed 200 OK in 27ms (Views: 18.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/bookmarks" for ::1 at 2020-07-23 23:41:54 -0400
+Processing by BookmarksController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CAsTblfbT7UXZvzS/bielHUPH91gkoIpi9DCgQfkn0X2fepLBkJWR6t8BAY27ERlH/IuIPVezRF45bFdw1lwpA==", "bookmark"=>{"name"=>"sad", "url"=>"asd", "category_id"=>"1", "kind_id"=>"2"}, "commit"=>"Create Bookmark"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[36mBookmark Create (0.6ms)[0m  [1m[32mINSERT INTO "bookmarks" ("name", "url", "category_id", "created_at", "updated_at", "kind_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "sad"], ["url", "asd"], ["category_id", 1], ["created_at", "2020-07-24 03:41:54.041079"], ["updated_at", "2020-07-24 03:41:54.041079"], ["kind_id", 2]]
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/bookmarks_controller.rb:30
+  Rendering bookmarks/create.js.erb
+  Rendered bookmarks/_bookmark.html.erb (0.7ms)
+  Rendered bookmarks/create.js.erb (3.7ms)
+Completed 200 OK in 18ms (Views: 7.6ms | ActiveRecord: 2.7ms)
+
+
+  [1m[36mBookmark Load (3.5ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/bookmarks" for ::1 at 2020-07-23 23:42:57 -0400
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  [1m[36mBookmark Load (0.7ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:16
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  Rendered collection of bookmarks/_bookmark.html.erb [7 times] (15.9ms)
+  Rendered bookmarks/index.html.erb within layouts/application (20.5ms)
+Completed 200 OK in 83ms (Views: 77.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/bookmarks/new" for ::1 at 2020-07-23 23:43:02 -0400
+Processing by BookmarksController#new as JS
+  Rendering bookmarks/new.js.erb
+  Rendered bookmarks/_form.html.erb (3.6ms)
+  Rendered bookmarks/new.js.erb (16.5ms)
+Completed 200 OK in 36ms (Views: 22.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/bookmarks" for ::1 at 2020-07-23 23:43:07 -0400
+Processing by BookmarksController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0fbgbrehOgfi+iv9r5rxG0JGJhE73qsuBOWDZVC3lCQvgBlL5jgj9V7g0ylkzivqKLsX7K4S5Bb30PC5lAp7xQ==", "bookmark"=>{"name"=>"sad", "url"=>"asd", "category_id"=>"2", "kind_id"=>"1"}, "commit"=>"Create Bookmark"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[36mBookmark Create (0.9ms)[0m  [1m[32mINSERT INTO "bookmarks" ("name", "url", "category_id", "created_at", "updated_at", "kind_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "sad"], ["url", "asd"], ["category_id", 2], ["created_at", "2020-07-24 03:43:07.714213"], ["updated_at", "2020-07-24 03:43:07.714213"], ["kind_id", 1]]
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/bookmarks_controller.rb:30
+  Rendering bookmarks/create.js.erb
+  Rendered bookmarks/_bookmark.html.erb (1.1ms)
+  Rendered bookmarks/create.js.erb (3.5ms)
+Completed 200 OK in 20ms (Views: 5.8ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/bookmarks/new" for ::1 at 2020-07-23 23:43:16 -0400
+Processing by BookmarksController#new as JS
+  Rendering bookmarks/new.js.erb
+  Rendered bookmarks/_form.html.erb (3.8ms)
+  Rendered bookmarks/new.js.erb (8.6ms)
+Completed 200 OK in 23ms (Views: 17.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/bookmarks" for ::1 at 2020-07-23 23:43:20 -0400
+Processing by BookmarksController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"V6AGYrf/jQNoRdjTZ03INVHW+angcjaVljWoazj0Z0Gp1v9H5maU8dRfIAesGRLEOyvIVHW+ea1lANu3/EmIoA==", "bookmark"=>{"name"=>"sad", "url"=>"asd", "category_id"=>"2", "kind_id"=>"2"}, "commit"=>"Create Bookmark"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[36mKind Load (0.4ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[36mBookmark Create (1.7ms)[0m  [1m[32mINSERT INTO "bookmarks" ("name", "url", "category_id", "created_at", "updated_at", "kind_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "sad"], ["url", "asd"], ["category_id", 2], ["created_at", "2020-07-24 03:43:20.573217"], ["updated_at", "2020-07-24 03:43:20.573217"], ["kind_id", 2]]
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/bookmarks_controller.rb:30
+  Rendering bookmarks/create.js.erb
+  Rendered bookmarks/_bookmark.html.erb (3.2ms)
+  Rendered bookmarks/create.js.erb (6.4ms)
+Completed 200 OK in 30ms (Views: 12.8ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/bookmarks/new" for ::1 at 2020-07-23 23:43:21 -0400
+Processing by BookmarksController#new as JS
+  Rendering bookmarks/new.js.erb
+  Rendered bookmarks/_form.html.erb (4.8ms)
+  Rendered bookmarks/new.js.erb (9.1ms)
+Completed 200 OK in 26ms (Views: 20.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/bookmarks" for ::1 at 2020-07-23 23:43:27 -0400
+Processing by BookmarksController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5Xs90E0E7YPyXMgqe6OM8+T4rZwz1Cg7pnfCHjHh4IgbDcT1HJ30cU5GMP6w91YCjgWcYaYYZwNVQrHC9VwPaQ==", "bookmark"=>{"name"=>"sadsd", "url"=>"sdsaddsa", "category_id"=>"2", "kind_id"=>"3"}, "commit"=>"Create Bookmark"}
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[36mBookmark Create (0.6ms)[0m  [1m[32mINSERT INTO "bookmarks" ("name", "url", "category_id", "created_at", "updated_at", "kind_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "sadsd"], ["url", "sdsaddsa"], ["category_id", 2], ["created_at", "2020-07-24 03:43:27.146133"], ["updated_at", "2020-07-24 03:43:27.146133"], ["kind_id", 3]]
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/bookmarks_controller.rb:30
+  Rendering bookmarks/create.js.erb
+  Rendered bookmarks/_bookmark.html.erb (1.6ms)
+  Rendered bookmarks/create.js.erb (3.3ms)
+Completed 200 OK in 25ms (Views: 8.2ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/bookmarks" for ::1 at 2020-07-23 23:43:34 -0400
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  [1m[36mBookmark Load (0.3ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:16
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  Rendered collection of bookmarks/_bookmark.html.erb [10 times] (24.2ms)
+  Rendered bookmarks/index.html.erb within layouts/application (28.3ms)
+Completed 200 OK in 88ms (Views: 82.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/bookmarks" for ::1 at 2020-07-23 23:52:25 -0400
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:16
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  Rendered collection of bookmarks/_bookmark.html.erb [10 times] (17.4ms)
+  Rendered bookmarks/index.html.erb within layouts/application (21.1ms)
+Completed 200 OK in 83ms (Views: 78.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/bookmarks/new" for ::1 at 2020-07-23 23:53:13 -0400
+Processing by BookmarksController#new as JS
+  Rendering bookmarks/new.js.erb
+  Rendered bookmarks/_form.html.erb (4.2ms)
+  Rendered bookmarks/new.js.erb (10.9ms)
+Completed 200 OK in 24ms (Views: 15.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/bookmarks" for ::1 at 2020-07-23 23:53:17 -0400
+Processing by BookmarksController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZAVD6pKYdstCR1BVnLgz8U08zAiBLtIoq9/6ymCdih2ac7rPwwFvOf5dqIFX7OkAJ8H99RTinRBY6okWpCBl/A==", "bookmark"=>{"name"=>"sad", "url"=>"asd", "category_id"=>"2", "kind_id"=>"2"}, "commit"=>"Create Bookmark"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[36mKind Load (0.2ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[36mBookmark Create (0.6ms)[0m  [1m[32mINSERT INTO "bookmarks" ("name", "url", "category_id", "created_at", "updated_at", "kind_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "sad"], ["url", "asd"], ["category_id", 2], ["created_at", "2020-07-24 03:53:17.894436"], ["updated_at", "2020-07-24 03:53:17.894436"], ["kind_id", 2]]
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/bookmarks_controller.rb:30
+  Rendering bookmarks/create.js.erb
+  Rendered bookmarks/_bookmark.html.erb (1.0ms)
+  Rendered bookmarks/create.js.erb (3.7ms)
+Completed 200 OK in 21ms (Views: 5.7ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/bookmarks" for ::1 at 2020-07-23 23:53:36 -0400
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  [1m[36mBookmark Load (0.3ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:16
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  Rendered collection of bookmarks/_bookmark.html.erb [11 times] (37.4ms)
+  Rendered bookmarks/index.html.erb within layouts/application (43.5ms)
+Completed 200 OK in 143ms (Views: 136.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/bookmarks" for ::1 at 2020-07-23 23:57:21 -0400
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  [1m[36mBookmark Load (0.3ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:16
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  Rendered collection of bookmarks/_bookmark.html.erb [11 times] (27.1ms)
+  Rendered bookmarks/index.html.erb within layouts/application (452.9ms)
+Completed 500 Internal Server Error in 458ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `bookmark' for #<#<Class:0x00007fd29b2d0800>:0x00007fd29cee41e0>
+Did you mean?  @bookmarks):
+    15:   <tbody>
+    16:     <% render @bookmarks%>
+    17:     <tr> 
+    18:       <td><%= bookmark.name %></td> 
+    19:       <td><%= bookmark.url %></td>
+    20:       <td><%= bookmark.category.name %></td>
+    21:       <td><%= link_to 'Show', bookmark %></td>
+  
+app/views/bookmarks/index.html.erb:18:in `_app_views_bookmarks_index_html_erb__4004624071249638195_70271276362500'
+Started GET "/bookmarks" for ::1 at 2020-07-23 23:57:58 -0400
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  Rendered bookmarks/index.html.erb within layouts/application (3.4ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/alejandro/Desktop/Desafio latam G-26/prueba-marcadores/app/views/bookmarks/index.html.erb:37: syntax error, unexpected end-of-input, expecting end):
+  
+app/views/bookmarks/index.html.erb:37: syntax error, unexpected end-of-input, expecting end
+Started GET "/bookmarks" for ::1 at 2020-07-23 23:58:09 -0400
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  [1m[36mBookmark Load (0.4ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:16
+  Rendered bookmarks/index.html.erb within layouts/application (7.4ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error ('#<Enumerator: [#<Bookmark id: 1, name: "sad", url: "asd", category_id: 2, created_at: "2020-07-24 02:43:17", updated_at: "2020-07-24 02:43:17", kind_id: 2>, #<Bookmark id: 2, name: "sad", url: "asd", category_id: 1, created_at: "2020-07-24 02:43:43", updated_at: "2020-07-24 02:43:43", kind_id: 1>, #<Bookmark id: 3, name: "sad", url: "asd", category_id: 2, created_at: "2020-07-24 03:08:32", updated_at: "2020-07-24 03:08:32", kind_id: 2>, #<Bookmark id: 4, name: "sad", url: "asd", category_id: 2, created_at: "2020-07-24 03:28:26", updated_at: "2020-07-24 03:28:26", kind_id: 2>, #<Bookmark id: 5, name: "sad", url: "asd", category_id: 2, created_at: "2020-07-24 03:36:09", updated_at: "2020-07-24 03:36:09", kind_id: 2>, #<Bookmark id: 6, name: "sad", url: "asd", category_id: 2, created_at: "2020-07-24 03:39:12", updated_at: "2020-07-24 03:39:12", kind_id: 1>, #<Bookmark id: 7, name: "sad", url: "asd", category_id: 1, created_at: "2020-07-24 03:41:54", updated_at: "2020-07-24 03:41:54", kind_id: 2>, #<Bookmark id: 8, name: "sad", url: "asd", category_id: 2, created_at: "2020-07-24 03:43:07", updated_at: "2020-07-24 03:43:07", kind_id: 1>, #<Bookmark id: 9, name: "sad", url: "asd", category_id: 2, created_at: "2020-07-24 03:43:20", updated_at: "2020-07-24 03:43:20", kind_id: 2>, #<Bookmark id: 10, name: "sadsd", url: "sdsaddsa", category_id: 2, created_at: "2020-07-24 03:43:27", updated_at: "2020-07-24 03:43:27", kind_id: 3>, #<Bookmark id: 11, name: "sad", url: "asd", category_id: 2, created_at: "2020-07-24 03:53:17", updated_at: "2020-07-24 03:53:17", kind_id: 2>]:each>' is not an ActiveModel-compatible object. It must implement :to_partial_path.):
+    13:   </thead>
+    14: 
+    15:   <tbody>
+    16:     <% render @bookmarks.each do |bookmark|%>
+    17:     <tr> 
+    18:       <td><%= bookmark.name %></td> 
+    19:       <td><%= bookmark.url %></td>
+  
+app/views/bookmarks/index.html.erb:16:in `_app_views_bookmarks_index_html_erb__4004624071249638195_70271298991860'
+Started GET "/bookmarks" for ::1 at 2020-07-23 23:58:28 -0400
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  [1m[36mBookmark Load (0.8ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:16
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/index.html.erb:20
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/index.html.erb:20
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/index.html.erb:20
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/index.html.erb:20
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/index.html.erb:20
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/index.html.erb:20
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/index.html.erb:20
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/index.html.erb:20
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/index.html.erb:20
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/index.html.erb:20
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/index.html.erb:20
+  Rendered bookmarks/index.html.erb within layouts/application (33.9ms)
+Completed 200 OK in 124ms (Views: 119.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/bookmarks" for ::1 at 2020-07-23 23:59:02 -0400
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:16
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  Rendered collection of bookmarks/_bookmark.html.erb [11 times] (37.8ms)
+  Rendered bookmarks/index.html.erb within layouts/application (45.4ms)
+Completed 200 OK in 160ms (Views: 158.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/bookmarks/new" for ::1 at 2020-07-23 23:59:04 -0400
+Processing by BookmarksController#new as JS
+  Rendering bookmarks/new.js.erb
+  Rendered bookmarks/_form.html.erb (3.2ms)
+  Rendered bookmarks/new.js.erb (11.2ms)
+Completed 200 OK in 27ms (Views: 19.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/bookmarks" for ::1 at 2020-07-23 23:59:10 -0400
+Processing by BookmarksController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ln2ZBMTzhuBGN0p0Dkf73OfFbWeY1DDOc0t+Ao2OJbTQC2AhlWqfEvotsqDFEyEtjThcmg0Yf/aAfg3eSTPKVQ==", "bookmark"=>{"name"=>"sad", "url"=>"asd", "category_id"=>"2", "kind_id"=>"2"}, "commit"=>"Create Bookmark"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[36mBookmark Create (1.2ms)[0m  [1m[32mINSERT INTO "bookmarks" ("name", "url", "category_id", "created_at", "updated_at", "kind_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "sad"], ["url", "asd"], ["category_id", 2], ["created_at", "2020-07-24 03:59:10.787544"], ["updated_at", "2020-07-24 03:59:10.787544"], ["kind_id", 2]]
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/bookmarks_controller.rb:30
+  Rendering bookmarks/create.js.erb
+  Rendered bookmarks/_bookmark.html.erb (1.9ms)
+  Rendered bookmarks/create.js.erb (3.6ms)
+Completed 200 OK in 21ms (Views: 6.2ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/bookmarks" for ::1 at 2020-07-23 23:59:13 -0400
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  [1m[36mBookmark Load (0.3ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:16
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  Rendered collection of bookmarks/_bookmark.html.erb [12 times] (29.4ms)
+  Rendered bookmarks/index.html.erb within layouts/application (36.1ms)
+Completed 200 OK in 92ms (Views: 89.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/bookmarks" for ::1 at 2020-07-23 23:59:40 -0400
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:16
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  Rendered collection of bookmarks/_bookmark.html.erb [12 times] (33.5ms)
+  Rendered bookmarks/index.html.erb within layouts/application (41.6ms)
+Completed 200 OK in 132ms (Views: 127.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/bookmarks" for ::1 at 2020-07-23 23:59:42 -0400
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  [1m[36mBookmark Load (0.5ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:16
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  Rendered collection of bookmarks/_bookmark.html.erb [12 times] (39.6ms)
+  Rendered bookmarks/index.html.erb within layouts/application (53.8ms)
+Completed 200 OK in 160ms (Views: 157.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/bookmarks" for ::1 at 2020-07-23 23:59:43 -0400
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:16
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  Rendered collection of bookmarks/_bookmark.html.erb [12 times] (24.8ms)
+  Rendered bookmarks/index.html.erb within layouts/application (35.4ms)
+Completed 200 OK in 80ms (Views: 78.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/bookmarks" for ::1 at 2020-07-23 23:59:43 -0400
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  [1m[36mBookmark Load (0.3ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:16
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  Rendered collection of bookmarks/_bookmark.html.erb [12 times] (29.4ms)
+  Rendered bookmarks/index.html.erb within layouts/application (36.7ms)
+Completed 200 OK in 78ms (Views: 75.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/bookmarks" for ::1 at 2020-07-23 23:59:44 -0400
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:16
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  Rendered collection of bookmarks/_bookmark.html.erb [12 times] (23.3ms)
+  Rendered bookmarks/index.html.erb within layouts/application (39.9ms)
+Completed 200 OK in 126ms (Views: 124.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/bookmarks/new" for ::1 at 2020-07-23 23:59:46 -0400
+Processing by BookmarksController#new as JS
+  Rendering bookmarks/new.js.erb
+  Rendered bookmarks/_form.html.erb (2.9ms)
+  Rendered bookmarks/new.js.erb (8.1ms)
+Completed 200 OK in 20ms (Views: 13.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/bookmarks" for ::1 at 2020-07-23 23:59:55 -0400
+Processing by BookmarksController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WfYSLdyQ/PlbR8x6Wnr5f/KzRkkXB0uhz5lpbS20ECCngOsIjQnlC+ddNK6RLiOOmE53tILLBJk8rBqx6Qn/wQ==", "bookmark"=>{"name"=>"sad", "url"=>"asd", "category_id"=>"2", "kind_id"=>"2"}, "commit"=>"Create Bookmark"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[36mBookmark Create (1.3ms)[0m  [1m[32mINSERT INTO "bookmarks" ("name", "url", "category_id", "created_at", "updated_at", "kind_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "sad"], ["url", "asd"], ["category_id", 2], ["created_at", "2020-07-24 03:59:55.158281"], ["updated_at", "2020-07-24 03:59:55.158281"], ["kind_id", 2]]
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[35m (6.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/bookmarks_controller.rb:30
+  Rendering bookmarks/create.js.erb
+  Rendered bookmarks/_bookmark.html.erb (1.0ms)
+  Rendered bookmarks/create.js.erb (2.6ms)
+Completed 200 OK in 22ms (Views: 5.7ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/bookmarks" for ::1 at 2020-07-23 23:59:57 -0400
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  [1m[36mBookmark Load (0.5ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:16
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  Rendered collection of bookmarks/_bookmark.html.erb [13 times] (42.1ms)
+  Rendered bookmarks/index.html.erb within layouts/application (52.2ms)
+Completed 200 OK in 151ms (Views: 147.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/bookmarks" for ::1 at 2020-07-24 00:00:22 -0400
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  [1m[36mBookmark Load (0.3ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:16
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  Rendered collection of bookmarks/_bookmark.html.erb [13 times] (27.9ms)
+  Rendered bookmarks/index.html.erb within layouts/application (35.3ms)
+Completed 200 OK in 82ms (Views: 79.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/bookmarks" for ::1 at 2020-07-24 00:01:07 -0400
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:16
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  Rendered collection of bookmarks/_bookmark.html.erb [13 times] (38.7ms)
+  Rendered bookmarks/index.html.erb within layouts/application (52.1ms)
+Completed 200 OK in 145ms (Views: 140.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/bookmarks" for ::1 at 2020-07-24 00:02:01 -0400
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:17
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  Rendered collection of bookmarks/_bookmark.html.erb [13 times] (19.9ms)
+  Rendered bookmarks/index.html.erb within layouts/application (28.1ms)
+Completed 200 OK in 65ms (Views: 62.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/bookmarks" for ::1 at 2020-07-24 00:25:25 -0400
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:17
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  Rendered collection of bookmarks/_bookmark.html.erb [13 times] (37.4ms)
+  Rendered bookmarks/index.html.erb within layouts/application (56.4ms)
+Completed 200 OK in 181ms (Views: 170.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/api/categories" for ::1 at 2020-07-24 00:25:28 -0400
+Processing by CategoriesController#prueba as HTML
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."created_at" DESC[0m
+  ↳ app/controllers/categories_controller.rb:12
+  [1m[36mBookmark Load (0.5ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 10]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.3ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 9]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (1.3ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 8]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.3ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 7]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 6]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 5]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 4]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 3]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.6ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 2]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.1ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 1]]
+  ↳ app/controllers/categories_controller.rb:15
+Completed 200 OK in 71ms (Views: 0.9ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/api/categories" for ::1 at 2020-07-24 00:26:09 -0400
+Processing by CategoriesController#prueba as HTML
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."created_at" DESC[0m
+  ↳ app/controllers/categories_controller.rb:12
+  [1m[36mBookmark Load (1.8ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 10]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.1ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 9]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.1ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 8]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.1ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 7]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.1ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 6]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.1ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 5]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.1ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 4]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 3]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 2]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.7ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 1]]
+  ↳ app/controllers/categories_controller.rb:15
+Completed 200 OK in 89ms (Views: 1.1ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/api/categories" for ::1 at 2020-07-24 00:27:17 -0400
+Processing by CategoriesController#prueba as HTML
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."created_at" DESC[0m
+  ↳ app/controllers/categories_controller.rb:12
+  [1m[36mBookmark Load (0.3ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 10]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 9]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 8]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 7]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 6]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 5]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 4]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 3]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 2]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.5ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 1]]
+  ↳ app/controllers/categories_controller.rb:15
+Completed 200 OK in 43ms (Views: 0.9ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/api/categories" for ::1 at 2020-07-24 00:28:10 -0400
+Processing by CategoriesController#prueba as HTML
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."created_at" DESC[0m
+  ↳ app/controllers/categories_controller.rb:12
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 10]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.1ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 9]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 8]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.6ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 7]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 6]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.1ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 5]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.1ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 4]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 3]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 2]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 1]]
+  ↳ app/controllers/categories_controller.rb:15
+Completed 200 OK in 63ms (Views: 1.5ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/api/categories" for ::1 at 2020-07-24 00:28:19 -0400
+Processing by CategoriesController#prueba as HTML
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."created_at" DESC[0m
+  ↳ app/controllers/categories_controller.rb:12
+  [1m[36mBookmark Load (0.1ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 10]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.1ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 9]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 8]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.1ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 7]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.1ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 6]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 5]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.1ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 4]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.1ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 3]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.3ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 2]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 1]]
+  ↳ app/controllers/categories_controller.rb:15
+Completed 200 OK in 57ms (Views: 1.4ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/api/categories" for ::1 at 2020-07-24 00:28:27 -0400
+Processing by CategoriesController#prueba as HTML
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."created_at" DESC[0m
+  ↳ app/controllers/categories_controller.rb:12
+  [1m[36mBookmark Load (0.5ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 10]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 9]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 8]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.4ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 7]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.1ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 6]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 5]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 4]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.3ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 3]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.8ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 2]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (2.4ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 1]]
+  ↳ app/controllers/categories_controller.rb:15
+Completed 200 OK in 162ms (Views: 1.2ms | ActiveRecord: 9.3ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateCategories (20200724002525)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "categories" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "visibility" boolean, "category_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_09a423a16c"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+)[0m
+  ↳ db/migrate/20200724002525_create_categories.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_categories_on_category_id" ON "categories" ("category_id")[0m
+  ↳ db/migrate/20200724002525_create_categories.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200724002525"]]
+  ↳ bin/rails:9
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateBookmarks (20200724003051)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "bookmarks" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "url" varchar, "category_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_e91b169454"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+)[0m
+  ↳ db/migrate/20200724003051_create_bookmarks.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_bookmarks_on_category_id" ON "bookmarks" ("category_id")[0m
+  ↳ db/migrate/20200724003051_create_bookmarks.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200724003051"]]
+  ↳ bin/rails:9
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateKinds (20200724005051)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "kinds" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20200724005051_create_kinds.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200724005051"]]
+  ↳ bin/rails:9
+  [1m[35m (3.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to AddKindToBookmark (20200724010218)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "bookmarks" ADD "kind_id" integer[0m
+  ↳ db/migrate/20200724010218_add_kind_to_bookmark.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "index_bookmarks_on_kind_id" ON "bookmarks" ("kind_id")[0m
+  ↳ db/migrate/20200724010218_add_kind_to_bookmark.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200724010218"]]
+  ↳ bin/rails:9
+  [1m[35m (4.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-07-24 04:32:26.440224"], ["updated_at", "2020-07-24 04:32:26.440224"]]
+  ↳ bin/rails:9
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mKind Create (1.0ms)[0m  [1m[32mINSERT INTO "kinds" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "tipoPrueba3"], ["created_at", "2020-07-24 04:32:34.509425"], ["updated_at", "2020-07-24 04:32:34.509425"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mKind Create (1.0ms)[0m  [1m[32mINSERT INTO "kinds" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "tipoPrueba2"], ["created_at", "2020-07-24 04:32:34.516657"], ["updated_at", "2020-07-24 04:32:34.516657"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mKind Create (2.8ms)[0m  [1m[32mINSERT INTO "kinds" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "tipoPrueba1"], ["created_at", "2020-07-24 04:32:34.526114"], ["updated_at", "2020-07-24 04:32:34.526114"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mKind Create (0.6ms)[0m  [1m[32mINSERT INTO "kinds" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "tipoPrueba3"], ["created_at", "2020-07-24 04:32:34.533569"], ["updated_at", "2020-07-24 04:32:34.533569"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mKind Create (0.8ms)[0m  [1m[32mINSERT INTO "kinds" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "tipoPrueba3"], ["created_at", "2020-07-24 04:32:34.542813"], ["updated_at", "2020-07-24 04:32:34.542813"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mKind Create (0.6ms)[0m  [1m[32mINSERT INTO "kinds" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "tipoPrueba2"], ["created_at", "2020-07-24 04:32:34.548456"], ["updated_at", "2020-07-24 04:32:34.548456"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mKind Create (0.7ms)[0m  [1m[32mINSERT INTO "kinds" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "tipoPrueba2"], ["created_at", "2020-07-24 04:32:34.556137"], ["updated_at", "2020-07-24 04:32:34.556137"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mKind Create (0.8ms)[0m  [1m[32mINSERT INTO "kinds" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "tipoPrueba1"], ["created_at", "2020-07-24 04:32:34.560960"], ["updated_at", "2020-07-24 04:32:34.560960"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mKind Create (0.7ms)[0m  [1m[32mINSERT INTO "kinds" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "tipoPrueba3"], ["created_at", "2020-07-24 04:32:34.565749"], ["updated_at", "2020-07-24 04:32:34.565749"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mKind Create (0.5ms)[0m  [1m[32mINSERT INTO "kinds" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "tipoPrueba3"], ["created_at", "2020-07-24 04:32:34.575273"], ["updated_at", "2020-07-24 04:32:34.575273"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mKind Create (0.6ms)[0m  [1m[32mINSERT INTO "kinds" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "tipoPrueba3"], ["created_at", "2020-07-24 04:32:34.580247"], ["updated_at", "2020-07-24 04:32:34.580247"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mKind Create (2.7ms)[0m  [1m[32mINSERT INTO "kinds" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "tipoPrueba2"], ["created_at", "2020-07-24 04:32:34.585862"], ["updated_at", "2020-07-24 04:32:34.585862"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (3.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mKind Create (2.0ms)[0m  [1m[32mINSERT INTO "kinds" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "tipoPrueba1"], ["created_at", "2020-07-24 04:32:34.594204"], ["updated_at", "2020-07-24 04:32:34.594204"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mKind Create (0.7ms)[0m  [1m[32mINSERT INTO "kinds" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "tipoPrueba2"], ["created_at", "2020-07-24 04:32:34.608792"], ["updated_at", "2020-07-24 04:32:34.608792"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mKind Create (0.6ms)[0m  [1m[32mINSERT INTO "kinds" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "tipoPrueba1"], ["created_at", "2020-07-24 04:32:34.613690"], ["updated_at", "2020-07-24 04:32:34.613690"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mKind Create (2.3ms)[0m  [1m[32mINSERT INTO "kinds" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "tipoPrueba1"], ["created_at", "2020-07-24 04:32:34.618657"], ["updated_at", "2020-07-24 04:32:34.618657"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mKind Create (0.8ms)[0m  [1m[32mINSERT INTO "kinds" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "tipoPrueba2"], ["created_at", "2020-07-24 04:32:34.625310"], ["updated_at", "2020-07-24 04:32:34.625310"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mKind Create (0.6ms)[0m  [1m[32mINSERT INTO "kinds" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "tipoPrueba1"], ["created_at", "2020-07-24 04:32:34.632326"], ["updated_at", "2020-07-24 04:32:34.632326"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mKind Create (0.6ms)[0m  [1m[32mINSERT INTO "kinds" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "tipoPrueba1"], ["created_at", "2020-07-24 04:32:34.639881"], ["updated_at", "2020-07-24 04:32:34.639881"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mKind Create (0.7ms)[0m  [1m[32mINSERT INTO "kinds" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "tipoPrueba1"], ["created_at", "2020-07-24 04:32:34.645266"], ["updated_at", "2020-07-24 04:32:34.645266"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mCategory Create (0.6ms)[0m  [1m[32mINSERT INTO "categories" ("name", "visibility", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "categoria1"], ["visibility", 1], ["created_at", "2020-07-24 04:32:34.661242"], ["updated_at", "2020-07-24 04:32:34.661242"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mCategory Create (0.6ms)[0m  [1m[32mINSERT INTO "categories" ("name", "visibility", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "categoria3"], ["visibility", 1], ["created_at", "2020-07-24 04:32:34.665711"], ["updated_at", "2020-07-24 04:32:34.665711"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mCategory Create (0.8ms)[0m  [1m[32mINSERT INTO "categories" ("name", "visibility", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "categoria3"], ["visibility", 1], ["created_at", "2020-07-24 04:32:34.671825"], ["updated_at", "2020-07-24 04:32:34.671825"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mCategory Create (0.6ms)[0m  [1m[32mINSERT INTO "categories" ("name", "visibility", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "categoria1"], ["visibility", 1], ["created_at", "2020-07-24 04:32:34.678644"], ["updated_at", "2020-07-24 04:32:34.678644"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mCategory Create (1.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "visibility", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "categoria2"], ["visibility", 1], ["created_at", "2020-07-24 04:32:34.683390"], ["updated_at", "2020-07-24 04:32:34.683390"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (3.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mCategory Create (0.6ms)[0m  [1m[32mINSERT INTO "categories" ("name", "visibility", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "categoria1"], ["visibility", 1], ["created_at", "2020-07-24 04:32:34.691676"], ["updated_at", "2020-07-24 04:32:34.691676"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mCategory Create (0.6ms)[0m  [1m[32mINSERT INTO "categories" ("name", "visibility", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "categoria1"], ["visibility", 1], ["created_at", "2020-07-24 04:32:34.698313"], ["updated_at", "2020-07-24 04:32:34.698313"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (3.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mCategory Create (0.7ms)[0m  [1m[32mINSERT INTO "categories" ("name", "visibility", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "categoria3"], ["visibility", 1], ["created_at", "2020-07-24 04:32:34.712437"], ["updated_at", "2020-07-24 04:32:34.712437"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("name", "visibility", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "categoria2"], ["visibility", 1], ["created_at", "2020-07-24 04:32:34.718478"], ["updated_at", "2020-07-24 04:32:34.718478"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mCategory Create (0.6ms)[0m  [1m[32mINSERT INTO "categories" ("name", "visibility", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "categoria1"], ["visibility", 1], ["created_at", "2020-07-24 04:32:34.727277"], ["updated_at", "2020-07-24 04:32:34.727277"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("name", "visibility", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "categoria2"], ["visibility", 1], ["created_at", "2020-07-24 04:32:34.731732"], ["updated_at", "2020-07-24 04:32:34.731732"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mCategory Create (4.0ms)[0m  [1m[32mINSERT INTO "categories" ("name", "visibility", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "categoria3"], ["visibility", 1], ["created_at", "2020-07-24 04:32:34.735455"], ["updated_at", "2020-07-24 04:32:34.735455"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mCategory Create (0.9ms)[0m  [1m[32mINSERT INTO "categories" ("name", "visibility", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "categoria3"], ["visibility", 1], ["created_at", "2020-07-24 04:32:34.745105"], ["updated_at", "2020-07-24 04:32:34.745105"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mCategory Create (3.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "visibility", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "categoria3"], ["visibility", 1], ["created_at", "2020-07-24 04:32:34.752279"], ["updated_at", "2020-07-24 04:32:34.752279"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("name", "visibility", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "categoria3"], ["visibility", 1], ["created_at", "2020-07-24 04:32:34.759786"], ["updated_at", "2020-07-24 04:32:34.759786"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mCategory Create (0.7ms)[0m  [1m[32mINSERT INTO "categories" ("name", "visibility", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "categoria2"], ["visibility", 1], ["created_at", "2020-07-24 04:32:34.764558"], ["updated_at", "2020-07-24 04:32:34.764558"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mCategory Create (2.1ms)[0m  [1m[32mINSERT INTO "categories" ("name", "visibility", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "categoria2"], ["visibility", 1], ["created_at", "2020-07-24 04:32:34.769025"], ["updated_at", "2020-07-24 04:32:34.769025"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mCategory Create (0.6ms)[0m  [1m[32mINSERT INTO "categories" ("name", "visibility", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "categoria3"], ["visibility", 1], ["created_at", "2020-07-24 04:32:34.775882"], ["updated_at", "2020-07-24 04:32:34.775882"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "visibility", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "categoria1"], ["visibility", 1], ["created_at", "2020-07-24 04:32:34.779686"], ["updated_at", "2020-07-24 04:32:34.779686"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mCategory Create (0.6ms)[0m  [1m[32mINSERT INTO "categories" ("name", "visibility", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "categoria3"], ["visibility", 1], ["created_at", "2020-07-24 04:32:34.785078"], ["updated_at", "2020-07-24 04:32:34.785078"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:27
+Started GET "/api/categories" for ::1 at 2020-07-24 00:32:45 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/alejandro/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/sprockets-rails-3.2.1/lib/sprockets/rails/quiet_assets.rb:13
+Processing by CategoriesController#prueba as HTML
+  [1m[36mCategory Load (1.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."created_at" DESC[0m
+  ↳ app/controllers/categories_controller.rb:12
+  [1m[36mBookmark Load (1.3ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 20]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.1ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 19]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 18]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.1ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 17]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (1.6ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 16]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.1ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 15]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.1ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 14]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 13]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.1ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 12]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 11]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 10]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.3ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 9]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 8]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 7]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 6]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.3ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 5]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 4]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 3]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 2]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.1ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 1]]
+  ↳ app/controllers/categories_controller.rb:15
+Completed 200 OK in 199ms (Views: 7.1ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/" for ::1 at 2020-07-24 00:32:51 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/alejandro/.rvm/gems/ruby-2.6.3/gems/railties-5.2.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/alejandro/.rvm/gems/ruby-2.6.3/gems/railties-5.2.4.3/lib/rails/templates/rails/welcome/index.html.erb (5.1ms)
+Completed 200 OK in 19ms (Views: 12.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/categories" for ::1 at 2020-07-24 00:32:57 -0400
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:15
+  Rendered categories/index.html.erb within layouts/application (13.4ms)
+Completed 200 OK in 626ms (Views: 618.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/categories" for ::1 at 2020-07-24 00:34:59 -0400
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:15
+  Rendered categories/index.html.erb within layouts/application (37.3ms)
+Completed 200 OK in 141ms (Views: 120.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/bookmarks" for ::1 at 2020-07-24 00:35:03 -0400
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  [1m[36mBookmark Load (0.5ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:17
+  Rendered collection of templates [0 times] (0.1ms)
+  Rendered bookmarks/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 101ms (Views: 91.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/bookmarks/new" for ::1 at 2020-07-24 00:35:06 -0400
+Processing by BookmarksController#new as JS
+  Rendering bookmarks/new.js.erb
+  Rendered bookmarks/_form.html.erb (30.6ms)
+  Rendered bookmarks/new.js.erb (41.4ms)
+Completed 200 OK in 68ms (Views: 47.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/bookmarks" for ::1 at 2020-07-24 00:35:22 -0400
+Processing by BookmarksController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+HkmOBefPMLw2uGhTF5/DaS8aQLk8Etl2ME0qyY1ViEGD98dRgYlMEzAGXWHCqX8zkFY/3E8BF0r9Ed34oi5wA==", "bookmark"=>{"name"=>"prueba bookmark", "url"=>"google.com", "category_id"=>"1", "kind_id"=>"2"}, "commit"=>"Create Bookmark"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[36mKind Load (0.2ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[36mBookmark Create (1.8ms)[0m  [1m[32mINSERT INTO "bookmarks" ("name", "url", "category_id", "created_at", "updated_at", "kind_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "prueba bookmark"], ["url", "google.com"], ["category_id", 1], ["created_at", "2020-07-24 04:35:22.432420"], ["updated_at", "2020-07-24 04:35:22.432420"], ["kind_id", 2]]
+  ↳ app/controllers/bookmarks_controller.rb:30
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/bookmarks_controller.rb:30
+  Rendering bookmarks/create.js.erb
+  Rendered bookmarks/_bookmark.html.erb (2.1ms)
+  Rendered bookmarks/create.js.erb (6.1ms)
+Completed 200 OK in 45ms (Views: 9.6ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/bookmarks" for ::1 at 2020-07-24 00:35:24 -0400
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:17
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  Rendered collection of bookmarks/_bookmark.html.erb [1 times] (3.5ms)
+  Rendered bookmarks/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 81ms (Views: 77.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/categories" for ::1 at 2020-07-24 00:35:31 -0400
+Processing by CategoriesController#api as HTML
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."created_at" DESC[0m
+  ↳ app/controllers/categories_controller.rb:12
+  [1m[36mBookmark Load (0.3ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 20]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.1ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 19]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.1ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 18]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.4ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 17]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.3ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 16]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.3ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 15]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.1ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 14]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 13]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 12]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 11]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.3ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 10]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 9]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 8]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 7]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.3ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 6]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (1.0ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 5]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.3ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 4]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 3]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.4ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 2]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."category_id" = ?[0m  [["category_id", 1]]
+  ↳ app/controllers/categories_controller.rb:15
+Completed 200 OK in 61ms (Views: 2.1ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/" for ::1 at 2020-07-24 00:35:49 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/alejandro/.rvm/gems/ruby-2.6.3/gems/railties-5.2.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/alejandro/.rvm/gems/ruby-2.6.3/gems/railties-5.2.4.3/lib/rails/templates/rails/welcome/index.html.erb (5.9ms)
+Completed 200 OK in 112ms (Views: 7.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-07-24 00:36:20 -0400
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:15
+  Rendered categories/index.html.erb within layouts/application (64.6ms)
+Completed 200 OK in 171ms (Views: 157.4ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/bookmarks" for ::1 at 2020-07-24 00:54:14 -0400
+  
+ArgumentError (Missing :controller key on routes definition, please check your routes.):
+  
+config/routes.rb:2:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/" for ::1 at 2020-07-24 00:54:21 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-07-24 00:54:35 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/alejandro/.rvm/gems/ruby-2.6.3/gems/railties-5.2.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/alejandro/.rvm/gems/ruby-2.6.3/gems/railties-5.2.4.3/lib/rails/templates/rails/welcome/index.html.erb (3.0ms)
+Completed 200 OK in 10ms (Views: 5.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dashborad" for ::1 at 2020-07-24 00:54:54 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/dashborad"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/dashborad" for ::1 at 2020-07-24 00:55:30 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/dashborad"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-07-24 00:55:32 -0400
+Processing by DashboradController#index as HTML
+  Rendering dashborad/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "bookmark" AS bookmark FROM "kinds" GROUP BY "bookmark"[0m
+  ↳ app/views/dashborad/index.html.erb:3
+  Rendered dashborad/index.html.erb within layouts/application (636.9ms)
+Completed 500 Internal Server Error in 645ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `pie_chart' for #<#<Class:0x00007fc5b0b1be80>:0x00007fc5b0b1a530>):
+    1: <h1>Dashborad#index</h1>
+    2: <p>Find me in app/views/dashborad/index.html.erb</p>
+    3: <%= pie_chart Kind.group(:bookmark).count %>
+  
+app/views/dashborad/index.html.erb:3:in `_app_views_dashborad_index_html_erb__2864507767209565716_70243524838180'
+Started GET "/" for ::1 at 2020-07-24 00:55:52 -0400
+Processing by DashboradController#index as HTML
+  Rendering dashborad/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "kinds"."name" AS kinds_name FROM "kinds" GROUP BY "kinds"."name"[0m
+  ↳ app/views/dashborad/index.html.erb:3
+  Rendered dashborad/index.html.erb within layouts/application (249.9ms)
+Completed 500 Internal Server Error in 255ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `pie_chart' for #<#<Class:0x00007fc5b0b1be80>:0x00007fc5aded4c78>):
+    1: <h1>Dashborad#index</h1>
+    2: <p>Find me in app/views/dashborad/index.html.erb</p>
+    3: <%= pie_chart Kind.group(:name).count %>
+  
+app/views/dashborad/index.html.erb:3:in `_app_views_dashborad_index_html_erb__2864507767209565716_70243501648500'
+  [1m[36mKind Load (0.2ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" ORDER BY "kinds"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/" for ::1 at 2020-07-24 00:56:47 -0400
+Processing by DashboradController#index as HTML
+  Rendering dashborad/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "bookmarks" AS bookmarks FROM "kinds" GROUP BY "bookmarks"[0m
+  ↳ app/views/dashborad/index.html.erb:3
+  [1m[36mBookmark Load (0.4ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."id" = ?[0m  [["id", 0]]
+  ↳ app/views/dashborad/index.html.erb:3
+  Rendered dashborad/index.html.erb within layouts/application (298.1ms)
+Completed 500 Internal Server Error in 304ms (ActiveRecord: 2.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `pie_chart' for #<#<Class:0x00007fc5b0b1be80>:0x00007fc5b0961158>):
+    1: <h1>Dashborad#index</h1>
+    2: <p>Find me in app/views/dashborad/index.html.erb</p>
+    3: <%= pie_chart Kind.group(:bookmarks).count %>
+  
+app/views/dashborad/index.html.erb:3:in `_app_views_dashborad_index_html_erb__2864507767209565716_70243523955900'
+Started GET "/" for ::1 at 2020-07-24 00:57:01 -0400
+Processing by DashboradController#index as HTML
+  Rendering dashborad/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "kinds"."id" AS kinds_id FROM "kinds" GROUP BY "kinds"."id"[0m
+  ↳ app/views/dashborad/index.html.erb:3
+  Rendered dashborad/index.html.erb within layouts/application (213.3ms)
+Completed 500 Internal Server Error in 228ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `pie_chart' for #<#<Class:0x00007fc5b0b1be80>:0x00007fc5b0a0b4f0>):
+    1: <h1>Dashborad#index</h1>
+    2: <p>Find me in app/views/dashborad/index.html.erb</p>
+    3: <%= pie_chart Kind.group(:id).count %>
+  
+app/views/dashborad/index.html.erb:3:in `_app_views_dashborad_index_html_erb__2864507767209565716_70243524304520'
+Started GET "/" for ::1 at 2020-07-24 00:58:42 -0400
+Processing by DashboradController#index as HTML
+  Rendering dashborad/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "bookmark" AS bookmark FROM "kinds" GROUP BY "bookmark"[0m
+  ↳ app/views/dashborad/index.html.erb:3
+  Rendered dashborad/index.html.erb within layouts/application (527.5ms)
+Completed 500 Internal Server Error in 535ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `pie_chart' for #<#<Class:0x00007fc5b0b1be80>:0x00007fc5b0a49cc8>):
+    1: <h1>Dashborad#index</h1>
+    2: <p>Find me in app/views/dashborad/index.html.erb</p>
+    3: <%= pie_chart Kind.group(:bookmark).count %>
+  
+app/views/dashborad/index.html.erb:3:in `_app_views_dashborad_index_html_erb__2864507767209565716_70243524432500'
+Started GET "/" for ::1 at 2020-07-24 01:00:05 -0400
+Processing by DashboradController#index as HTML
+  Rendering dashborad/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "bookmark" AS bookmark FROM "kinds" GROUP BY "bookmark"[0m
+  ↳ app/views/dashborad/index.html.erb:3
+  Rendered dashborad/index.html.erb within layouts/application (212.0ms)
+Completed 500 Internal Server Error in 219ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `pie_chart' for #<#<Class:0x00007fc5b1039c28>:0x00007fc5b1820c98>):
+    1: <h1>Dashborad#index</h1>
+    2: <p>Find me in app/views/dashborad/index.html.erb</p>
+    3: <%= pie_chart Kind.group(:bookmark).count %>
+  
+app/views/dashborad/index.html.erb:3:in `_app_views_dashborad_index_html_erb__2864507767209565716_70243527546720'
+Started GET "/" for ::1 at 2020-07-24 01:04:10 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/alejandro/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/sprockets-rails-3.2.1/lib/sprockets/rails/quiet_assets.rb:13
+Processing by DashboradController#index as HTML
+  Rendering dashborad/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "bookmark" AS bookmark FROM "kinds" GROUP BY "bookmark"[0m
+  ↳ app/views/dashborad/index.html.erb:3
+  Rendered dashborad/index.html.erb within layouts/application (30.8ms)
+Completed 200 OK in 1681ms (Views: 1667.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-07-24 01:04:41 -0400
+Processing by DashboradController#index as HTML
+  Rendering dashborad/index.html.erb within layouts/application
+  Rendered dashborad/index.html.erb within layouts/application (22.9ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for :bookmark:Symbol):
+    1: <h1>Dashborad#index</h1>
+    2: <p>Find me in app/views/dashborad/index.html.erb</p>
+    3: <%= pie_chart Kind.group(:bookmark.name).count %>
+  
+app/views/dashborad/index.html.erb:3:in `_app_views_dashborad_index_html_erb___2605455101871234853_70127020976380'
+Started GET "/" for ::1 at 2020-07-24 01:04:49 -0400
+Processing by DashboradController#index as HTML
+  Rendering dashborad/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "kinds"."name" AS kinds_name FROM "kinds" GROUP BY "kinds"."name"[0m
+  ↳ app/views/dashborad/index.html.erb:3
+  Rendered dashborad/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 139ms (Views: 136.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-07-24 01:08:08 -0400
+Processing by DashboradController#index as HTML
+  Rendering dashborad/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "kinds"."name" AS kinds_name FROM "kinds" GROUP BY "kinds"."name"[0m
+  ↳ app/views/dashborad/index.html.erb:3
+  Rendered dashborad/index.html.erb within layouts/application (22.4ms)
+Completed 200 OK in 683ms (Views: 669.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2020-07-24 01:09:21 -0400
+Processing by DashboradController#index as HTML
+  Rendering dashborad/index.html.erb within layouts/application
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "kinds"."name" AS kinds_name FROM "kinds" GROUP BY "kinds"."name"[0m
+  ↳ app/views/dashborad/index.html.erb:3
+  Rendered dashborad/index.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 276ms (Views: 270.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for ::1 at 2020-07-24 01:09:41 -0400
+Processing by DashboradController#index as HTML
+  Rendering dashborad/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "kinds"."name" AS kinds_name FROM "kinds" GROUP BY "kinds"."name"[0m
+  ↳ app/views/dashborad/index.html.erb:3
+  Rendered dashborad/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 89ms (Views: 86.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-07-24 01:09:51 -0400
+Processing by DashboradController#index as HTML
+  Rendering dashborad/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "kinds"."name" AS kinds_name FROM "kinds" GROUP BY "kinds"."name"[0m
+  ↳ app/views/dashborad/index.html.erb:3
+  Rendered dashborad/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 93ms (Views: 91.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-07-24 01:15:28 -0400
+Processing by DashboradController#index as HTML
+  Rendering dashborad/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "kinds"."name" AS kinds_name FROM "kinds" GROUP BY "kinds"."name"[0m
+  ↳ app/views/dashborad/index.html.erb:3
+  Rendered dashborad/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 942ms (Views: 938.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-07-24 01:19:01 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/alejandro/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/sprockets-rails-3.2.1/lib/sprockets/rails/quiet_assets.rb:13
+Processing by DashboradController#index as HTML
+  Rendering dashborad/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "kinds"."name" AS kinds_name FROM "kinds" GROUP BY "kinds"."name"[0m
+  ↳ app/views/dashborad/index.html.erb:3
+  Rendered dashborad/index.html.erb within layouts/application (58.9ms)
+Completed 500 Internal Server Error in 2180ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"categories"}, missing required keys: [:id]):
+    10:   </head>
+    11: 
+    12:   <body>
+    13:     <%= link_to 'Categorias', category_path, class: "button is-info" %>
+    14:     <%= yield %>
+    15:   </body>
+    16: </html>
+  
+app/views/layouts/application.html.erb:13:in `_app_views_layouts_application_html_erb__1666390283897043708_70191361084680'
+Started GET "/" for ::1 at 2020-07-24 01:20:33 -0400
+Processing by DashboradController#index as HTML
+  Rendering dashborad/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "kinds"."name" AS kinds_name FROM "kinds" GROUP BY "kinds"."name"[0m
+  ↳ app/views/dashborad/index.html.erb:3
+  Rendered dashborad/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 121ms (Views: 115.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/categories" for ::1 at 2020-07-24 01:20:36 -0400
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:15
+  Rendered categories/index.html.erb within layouts/application (22.4ms)
+Completed 200 OK in 95ms (Views: 83.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2020-07-24 01:21:11 -0400
+Processing by DashboradController#index as HTML
+  Rendering dashborad/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "kinds"."name" AS kinds_name FROM "kinds" GROUP BY "kinds"."name"[0m
+  ↳ app/views/dashborad/index.html.erb:3
+  Rendered dashborad/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 77ms (Views: 74.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/kinds" for ::1 at 2020-07-24 01:21:13 -0400
+Processing by KindsController#index as HTML
+  Rendering kinds/index.html.erb within layouts/application
+  [1m[36mKind Load (0.4ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ app/views/kinds/index.html.erb:14
+  Rendered kinds/index.html.erb within layouts/application (23.2ms)
+Completed 200 OK in 115ms (Views: 108.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/bookmarks" for ::1 at 2020-07-24 01:21:14 -0400
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  [1m[36mBookmark Load (0.3ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:17
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  Rendered collection of bookmarks/_bookmark.html.erb [1 times] (23.7ms)
+  Rendered bookmarks/index.html.erb within layouts/application (53.4ms)
+Completed 200 OK in 111ms (Views: 96.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/kinds" for ::1 at 2020-07-24 01:21:16 -0400
+Processing by KindsController#index as HTML
+  Rendering kinds/index.html.erb within layouts/application
+  [1m[36mKind Load (0.3ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ app/views/kinds/index.html.erb:14
+  Rendered kinds/index.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 100ms (Views: 97.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/categories" for ::1 at 2020-07-24 01:21:16 -0400
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:15
+  Rendered categories/index.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 108ms (Views: 103.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/kinds" for ::1 at 2020-07-24 01:21:18 -0400
+Processing by KindsController#index as HTML
+  Rendering kinds/index.html.erb within layouts/application
+  [1m[36mKind Load (0.3ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ app/views/kinds/index.html.erb:14
+  Rendered kinds/index.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 79ms (Views: 76.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/bookmarks" for ::1 at 2020-07-24 01:21:19 -0400
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  [1m[36mBookmark Load (0.5ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:17
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  Rendered collection of bookmarks/_bookmark.html.erb [1 times] (4.8ms)
+  Rendered bookmarks/index.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 63ms (Views: 61.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/kinds" for ::1 at 2020-07-24 01:21:21 -0400
+Processing by KindsController#index as HTML
+  Rendering kinds/index.html.erb within layouts/application
+  [1m[36mKind Load (0.3ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ app/views/kinds/index.html.erb:14
+  Rendered kinds/index.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 110ms (Views: 108.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/categories" for ::1 at 2020-07-24 01:21:22 -0400
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:15
+  Rendered categories/index.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 95ms (Views: 93.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/bookmarks" for ::1 at 2020-07-24 01:21:25 -0400
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  [1m[36mBookmark Load (0.4ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:17
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  Rendered collection of bookmarks/_bookmark.html.erb [1 times] (3.9ms)
+  Rendered bookmarks/index.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 151ms (Views: 143.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/kinds" for ::1 at 2020-07-24 01:21:26 -0400
+Processing by KindsController#index as HTML
+  Rendering kinds/index.html.erb within layouts/application
+  [1m[36mKind Load (0.3ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ app/views/kinds/index.html.erb:14
+  Rendered kinds/index.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 124ms (Views: 122.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/categories" for ::1 at 2020-07-24 01:21:26 -0400
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:15
+  Rendered categories/index.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 96ms (Views: 93.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-07-24 01:21:29 -0400
+Processing by DashboradController#index as HTML
+  Rendering dashborad/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "kinds"."name" AS kinds_name FROM "kinds" GROUP BY "kinds"."name"[0m
+  ↳ app/views/dashborad/index.html.erb:3
+  Rendered dashborad/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 65ms (Views: 62.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-07-24 01:21:54 -0400
+Processing by DashboradController#index as HTML
+  Rendering dashborad/index.html.erb within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "kinds"."name" AS kinds_name FROM "kinds" GROUP BY "kinds"."name"[0m
+  ↳ app/views/dashborad/index.html.erb:3
+  Rendered dashborad/index.html.erb within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 562ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `dahsborad_path' for #<#<Class:0x00007fad67d0de70>:0x00007fad6756cf68>):
+    13:     <%= link_to 'Categorias', categories_path, class: "button is-info" %>
+    14:     <%= link_to 'Tipos', kinds_path, class: "button is-info" %>
+    15:     <%= link_to 'Marcadores', bookmarks_path, class: "button is-info" %>
+    16:     <%= link_to 'Gráfico', dahsborad_path, class: "button is-info" %>
+    17:     <%= yield %>
+    18:   </body>
+    19: </html>
+  
+app/views/layouts/application.html.erb:16:in `_app_views_layouts_application_html_erb__1666390283897043708_70191369923000'
+Started GET "/" for ::1 at 2020-07-24 01:22:04 -0400
+Processing by DashboradController#index as HTML
+  Rendering dashborad/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "kinds"."name" AS kinds_name FROM "kinds" GROUP BY "kinds"."name"[0m
+  ↳ app/views/dashborad/index.html.erb:3
+  Rendered dashborad/index.html.erb within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 633ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `dashborad_path' for #<#<Class:0x00007fad67d0de70>:0x00007fad6b240e80>):
+    13:     <%= link_to 'Categorias', categories_path, class: "button is-info" %>
+    14:     <%= link_to 'Tipos', kinds_path, class: "button is-info" %>
+    15:     <%= link_to 'Marcadores', bookmarks_path, class: "button is-info" %>
+    16:     <%= link_to 'Gráfico', dashborad_path, class: "button is-info" %>
+    17:     <%= yield %>
+    18:   </body>
+    19: </html>
+  
+app/views/layouts/application.html.erb:16:in `_app_views_layouts_application_html_erb__1666390283897043708_70191405698720'
+Started GET "/" for ::1 at 2020-07-24 01:22:33 -0400
+Processing by DashboradController#index as HTML
+  Rendering dashborad/index.html.erb within layouts/application
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "kinds"."name" AS kinds_name FROM "kinds" GROUP BY "kinds"."name"[0m
+  ↳ app/views/dashborad/index.html.erb:3
+  Rendered dashborad/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 161ms (Views: 157.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2020-07-24 01:22:35 -0400
+Processing by DashboradController#index as HTML
+  Rendering dashborad/index.html.erb within layouts/application
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "kinds"."name" AS kinds_name FROM "kinds" GROUP BY "kinds"."name"[0m
+  ↳ app/views/dashborad/index.html.erb:3
+  Rendered dashborad/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 135ms (Views: 132.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/bookmarks" for ::1 at 2020-07-24 01:22:36 -0400
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:17
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  Rendered collection of bookmarks/_bookmark.html.erb [1 times] (2.7ms)
+  Rendered bookmarks/index.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 84ms (Views: 80.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/kinds" for ::1 at 2020-07-24 01:22:36 -0400
+Processing by KindsController#index as HTML
+  Rendering kinds/index.html.erb within layouts/application
+  [1m[36mKind Load (0.2ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ app/views/kinds/index.html.erb:14
+  Rendered kinds/index.html.erb within layouts/application (50.8ms)
+Completed 200 OK in 140ms (Views: 135.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/categories" for ::1 at 2020-07-24 01:22:37 -0400
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:15
+  Rendered categories/index.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 91ms (Views: 87.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/kinds" for ::1 at 2020-07-24 01:22:44 -0400
+Processing by KindsController#index as HTML
+  Rendering kinds/index.html.erb within layouts/application
+  [1m[36mKind Load (0.5ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ app/views/kinds/index.html.erb:14
+  Rendered kinds/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 104ms (Views: 100.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/bookmarks" for ::1 at 2020-07-24 01:22:45 -0400
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  [1m[36mBookmark Load (1.4ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:17
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_bookmark.html.erb:4
+  Rendered collection of bookmarks/_bookmark.html.erb [1 times] (3.5ms)
+  Rendered bookmarks/index.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 138ms (Views: 134.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for ::1 at 2020-07-24 01:22:45 -0400
+Processing by DashboradController#index as HTML
+  Rendering dashborad/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "kinds"."name" AS kinds_name FROM "kinds" GROUP BY "kinds"."name"[0m
+  ↳ app/views/dashborad/index.html.erb:3
+  Rendered dashborad/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 112ms (Views: 110.1ms | ActiveRecord: 0.4ms)
+
+

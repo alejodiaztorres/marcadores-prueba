@@ -10,6 +10,10 @@
   </head>
 
   <body>
+    <%= link_to 'Categorias', categories_path, class: "button is-info" %>
+    <%= link_to 'Tipos', kinds_path, class: "button is-info" %>
+    <%= link_to 'Marcadores', bookmarks_path, class: "button is-info" %>
+    <%= link_to 'Gráfico', root_path, class: "button is-info" %>
     <%= yield %>
   </body>
 </html>

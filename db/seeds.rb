@@ -14,15 +14,15 @@ categories = ['categoria1', 'categoria2', 'categoria3']
 bookmarks = ['marcadorcito1', 'marcadorcito2', 'marcadorcito3']
 urls = ['google.com', 'youtube.com']
 
-10.times do
+20.times do
     Kind.create(name: kinds.sample())
 end
 
 
-10.times do
+20.times do
     Category.create(name: categories.sample(), visibility: true)
 end
 
-10.times do
+20.times do
     Bookmark.create(name: bookmarks.sample(), url: urls.sample())
 end
